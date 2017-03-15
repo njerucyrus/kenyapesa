@@ -33,10 +33,11 @@
                     </div>
                     <div class="single_home_slider">
                         <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                            <h1>WELCOME TO OUR LOGIC</h1>
-                            <p>We Make Awesome Theme For Your Business</p>
+                            <h1>WELCOME TO KENYAPESA </h1>
+                            <p>INSTANT PAYPAL TO MPESA WITHDRAW SERVICES IN KENYA</p>
                             <div class="home_btn">
-                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                <a href="" class="btn btn-primary">Convert  </a>
+                                <a href="" class="btn btn-primary">Sign up</a>
                             </div>
 
                         </div>
