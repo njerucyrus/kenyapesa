@@ -392,6 +392,7 @@ Button
     margin-top: 20px;
     background-color: #ff7200;
     transition: .5s;
+    /*border: 1px solid #ff7200;*/
     border: 1px solid #ff7200;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -408,6 +409,11 @@ Button
     background-color: #ff7200;
     transition: .5s;
     padding: 9px 30px;
+    /*
+    my addition
+     */
+    border-radius: 25px;
+    margin: 2px;
 }
 
 .btn_news_color{
