@@ -172,7 +172,7 @@ class Payment implements PesaCrud
     /**
      * @param $transactionId
      * @return bool
-     * updated the transaction status
+     * update the transaction status
      * after payment has been completed successfully
      */
     public  function update($transactionId)
