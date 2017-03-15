@@ -10,6 +10,7 @@ require_once '../db/class.db.php';
 
 class Auth{
 
+    private $token;
     public function authenticate($username, $password)
     {
         global $conn;
@@ -36,5 +37,10 @@ class Auth{
             echo $e->getMessage();
             return false;
         }
+    }
+
+    public function generateCSRF_TOKEN(){
+        $this->token = md5(uniqid('auth_token', true));
+        return $this->token;
     }
 }

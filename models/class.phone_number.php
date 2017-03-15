@@ -7,7 +7,9 @@
  */
 
 class PhoneNumber {
+
     private $phoneNumber;
+
     public function __construct($phoneNumber)
     {
         $this->phoneNumber = $phoneNumber;
