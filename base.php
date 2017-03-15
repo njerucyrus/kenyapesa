@@ -152,6 +152,9 @@ include "views/layouts/head.inc.php";
 
 
             <section id="contact" class="contact">
+                <?php
+                include "views/layouts/contact.inc.php";
+                ?>
 
             </section>  <!-- End of contact section -->
 
