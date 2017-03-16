@@ -8,7 +8,7 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    <?php include "views/layouts/head.inc.php"; ?>
+    <?php include 'head.inc.php';?>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="200">
 <!--[if lt IE 8]>
@@ -22,24 +22,24 @@
 <div class="culmn">
 
     <header id="main_menu" class="header navbar-fixed-top">
-        <?php include "views/layouts/navbar.inc.php"; ?>
+        <?php include "navbar.inc.php"; ?>
     </header> <!--End of header -->
 
 
     <section id="home" class="home">
-        <?php include "views/layouts/home.inc.php"; ?>
+        <?php include "home.inc.php"; ?>
     </section>
 
 
     <section id="service" class="service">
-        <?php include "views/layouts/services.inc.php"; ?>
+        <?php include "services.inc.php"; ?>
     </section>
 
 
 
 
     <section id="about" class="about">
-        <?php include "views/layouts/about.inc.php"; ?>
+        <?php include "about.inc.php"; ?>
     </section>
 
 
@@ -103,22 +103,24 @@
 
 
     <section id="choose" class="choose">
-        <?php include "views/layouts/why_choose_us.inc.php"; ?>
+        <?php include "why_choose_us.inc.php"; ?>
     </section>
 
 
     <section id="testimonial" class="testimonial">
-        <?php include "views/layouts/testimonial.inc.php"; ?>
+        <?php include "testimonial.inc.php"; ?>
     </section>
 
 
     <section id="signup" class="signup">
-        <?php include  "views/layouts/signup.inc.php"; ?>
+        <?php include "signup.php";
+
+        ?>
     </section>
 
 
     <section id="contact" class="contact">
-        <?php include "views/layouts/contact.inc.php"; ?>
+        <?php include "contact.inc.php"; ?>
 
     </section>  <!-- End of contact section -->
 
@@ -126,7 +128,7 @@
     <!--maps here-->
 
     <div id="footers">
-        <?php include "views/layouts/footer.inc.php"; ?>
+        <?php include "footer.inc.php"; ?>
     </div>
 
 </div>

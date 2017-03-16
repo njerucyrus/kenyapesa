@@ -13,11 +13,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <!--Google Font link-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+<!--        <!--Google Font link-->-->
+<!--        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">-->
+<!--        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">-->
 
         <link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
+
         <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="public/assets/css/magnific-popup.css">
         <link rel="stylesheet" href="public/assets/css/custom.css">

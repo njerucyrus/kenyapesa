@@ -94,7 +94,7 @@
                                                 <a href="" class="btn btn-primary">LEARN MORE</a>
                                             </div>
                                         </div>
-
+                                        billboard@localhost
                                         <div class="col-sm-6">
                                             <div class="single_tab_img">
                                                 <img src="public/assets/images/stab1.png" alt="" />

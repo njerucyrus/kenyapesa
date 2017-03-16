@@ -6,8 +6,8 @@
  * Time: 11:02 PM
  */
 
-require_once 'interface.crud.php';
-require_once 'class.auth.php';
+include_once 'interface.crud.php';
+include_once 'class.auth.php';
 
 class User extends Auth implements PesaCrud
 {
@@ -185,10 +185,10 @@ class User extends Auth implements PesaCrud
             $stmt = $conn->prepare("INSERT INTO users (first_name, last_name,
                                     paypal_email, phone_number, 
                                     id_no, status, transaction_limit,
-                                    amount_limit) VALUES(:first_name, :last_name,
+                                    amount_limit, password) VALUES(:first_name, :last_name,
                                     :paypal_email, :phone_number, 
                                     :id_no, :status, :transaction_limit,
-                                    :amount_limit) ");
+                                    :amount_limit, :password) ");
 
             $stmt->bindParam(":first_name", $firstName);
             $stmt->bindParam(":last_name", $lastName);
@@ -198,6 +198,7 @@ class User extends Auth implements PesaCrud
             $stmt->bindParam(":status", $status);
             $stmt->bindParam(":transaction_limit", $transactionLimit);
             $stmt->bindParam(":amount_limit", $amountLimit);
+            $stmt->bindParam(":password", $password);
 
             $stmt->execute();
             return true;
@@ -244,6 +245,7 @@ class User extends Auth implements PesaCrud
             $stmt->bindParam(":status", $status);
             $stmt->bindParam(":transaction_limit", $transactionLimit);
             $stmt->bindParam(":amount_limit", $amountLimit);
+            $stmt->bindParam(":password", $password);
 
             $stmt->execute();
             return true;

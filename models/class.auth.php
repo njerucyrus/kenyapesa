@@ -6,7 +6,8 @@
  * Time: 1:02 AM
  */
 
-require_once '../db/class.db.php';
+require_once __DIR__.'/../db/class.db.php';
+
 
 class Auth{
 

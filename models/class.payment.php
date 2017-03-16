@@ -5,8 +5,9 @@
  * Date: 3/15/17
  * Time: 11:18 AM
  */
+
 require_once 'interface.crud.php';
-require_once '../db/class.db.php';
+require_once __DIR__.'/../db/class.db.php';
 
 class Payment implements PesaCrud
 {
