@@ -559,7 +559,7 @@ input::-ms-input-placeholder {
 
 .main_menu_bg{
     margin-top: 0px;
-    background-color: transparent;
+    /*background-color: transparent;*/
 }
 .main_menu_bg .navbar-default {
     background-color: transparent;
@@ -678,7 +678,7 @@ input::-ms-input-placeholder {
 .home .owl-theme .owl-nav {
     margin-top: 80px;
     text-align: center;
-    -webkit-tap-highlight-color: transparent;
+    /*-webkit-tap-highlight-color: transparent;*/
 }
 .owl-theme .owl-dots .owl-dot span {
     background: #fff;
