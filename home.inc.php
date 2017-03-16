@@ -16,11 +16,8 @@
                             <h1>WELCOME TO PremierPesa</h1>
                             <p>We transfer money internationaly</p>
                             <div class="home_btn">
-<<<<<<< HEAD
-                                <a href="#convert" class="btn btn-primary">Convert </a>
+                                <a href="#convert" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert </a>
                                 <a href="#signup" class="btn btn-primary">Sign Up</a>
-=======
-                                <a href="" class="btn btn-primary" style="border-radius: 25px; margin: 2px;">SIGN UP</a>
                             </div>
 
                         </div>
@@ -30,17 +27,7 @@
                             <h1>Its fast reliable and efficient</h1>
                             <p>One of a kind</p>
                             <div class="home_btn">
-                                <a href="" class="btn btn-primary">LEARN MORE</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="single_home_slider">
-                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                            <h1>WELCOME TO KENYAPESA </h1>
-                            <p>INSTANT PAYPAL TO MPESA WITHDRAW SERVICES IN KENYA</p>
-                            <div class="home_btn">
-                                <a href="#convert" class="btn btn-primary">Convert </a>
+                                <a href="#convert" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert </a>
                                 <a href="#signup" class="btn btn-primary">Sign Up</a>
                             </div>
 
