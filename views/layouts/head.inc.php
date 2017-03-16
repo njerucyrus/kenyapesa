@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="public/assets/css/magnific-popup.css">
-
+        <link rel="stylesheet" href="public/assets/css/custom.css">
 
         <!--For Plugins external css-->
         <link rel="stylesheet" href="public/assets/css/plugins.css" />

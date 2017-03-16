@@ -33,10 +33,8 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#home">HOME</a></li>
-                                <li><a href="#service">Service</a></li>
-                                <li><a href="#team">TEAMS</a></li>
-                                <li><a href="#portfolio">WORKS</a></li>
                                 <li><a href="#testimonial">Testimonial</a></li>
+                                <li><a href="#signup">Join</a></li>
                                 <li><a href="#contact">CONTACT</a></li>
 
 
