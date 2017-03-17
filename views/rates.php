@@ -6,8 +6,8 @@
  * Time: 5:38 PM
  */
 
-require_once __DIR__.'/models/class.rate.php';
-require_once __DIR__.'/models/class.limits.php';
+require_once __DIR__ . '/../models/class.rate.php';
+require_once __DIR__ . '/../models/class.limits.php';
 
 ?>
 

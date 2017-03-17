@@ -6,7 +6,7 @@
  * Time: 2:05 AM
  */
 
-require_once __DIR__.'/models/class.limits.php';
+require_once __DIR__ . '/../models/class.limits.php';
 
 if (is_array(Limit::getLimits())) {
     print_r(json_encode(Limit::getLimits()));

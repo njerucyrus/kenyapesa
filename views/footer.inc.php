@@ -8,6 +8,7 @@
 
 
 ?>
+
 <section id="footer" class="footer_widget">
     <div class="video_overlay">
         <div class="container">
@@ -106,13 +107,13 @@
 
                         <div class="col-sm-6 col-xs-12">
                             <div class="flowus">
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-twitter"></i></a>
-                                <a href=""><i class="fa fa-google-plus"></i></a>
-                                <a href=""><i class="fa fa-instagram"></i></a>
-                                <a href=""><i class="fa fa-youtube"></i></a>
-                                <a href=""><i class="fa fa-dribbble"></i></a>
-                            </div>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-youtube"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+<!--                            </div>-->
                         </div>
 
                     </div>

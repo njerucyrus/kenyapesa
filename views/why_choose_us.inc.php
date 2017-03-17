@@ -5,7 +5,7 @@
  * Date: 16/03/2017
  * Time: 00:33
  */
-?>
+?> 
 <div class="container">
     <div class="row">
         <div class="main_choose sections">

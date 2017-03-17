@@ -5,8 +5,8 @@
  * Date: 16/03/2017
  * Time: 00:10
  */
-require_once __DIR__ . '/models/user.php';
-require_once __DIR__ . '/models/class.phone_number.php';
+require_once __DIR__ . '/../models/user.php';
+require_once __DIR__ . '/../models/class.phone_number.php';
 
 if(isset($_POST['first_name'], $_POST['last_name'],
     $_POST['paypal_email'], $_POST['phone_number'],

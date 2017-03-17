@@ -5,12 +5,12 @@
  * Date: 3/16/17
  * Time: 10:19 PM
  */
-include(__DIR__.'/models/class.calculator.php');
+include(__DIR__ . '/../models/class.calculator.php');
 
 
 
 ?>
-<script src="public/assets/js/jquery-3.1.1.min.js"></script>
+<script src="../public/assets/js/jquery-3.1.1.min.js"></script>
 <script>
     $(document).ready(function (e) {
         e.preventDefault;
@@ -21,7 +21,7 @@ include(__DIR__.'/models/class.calculator.php');
 
     function checkLimit() {
         var value = $('#dollars').val();
-        var url = 'limits.php';
+        var url = 'views/limits.php';
         $.ajax(
             {
                 type: 'GET',
@@ -49,7 +49,7 @@ include(__DIR__.'/models/class.calculator.php');
         )
     }
     function calculate() {
-        var url = 'calc.php';
+        var url = 'views/calc.php';
         var value = $('#dollars').val();
 
         console.log('sending', value);
@@ -81,7 +81,7 @@ include(__DIR__.'/models/class.calculator.php');
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <?php include 'head.inc.php'; ?>
-    <link rel="stylesheet" href="public/assets/css/custom.css">
+    <link rel="stylesheet" href="../public/assets/css/custom.css">
 
 
     <style>
@@ -152,16 +152,16 @@ include(__DIR__.'/models/class.calculator.php');
     <a href="#"><i class="fa fa-chevron-up"></i></a>
 </div>
 
-<script src="public/assets/js/vendor/jquery-1.11.2.min.js"></script>
-<script src="public/assets/js/vendor/bootstrap.min.js"></script>
+<script src="../public/assets/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="../public/assets/js/vendor/bootstrap.min.js"></script>
 
-<script src="public/assets/js/jquery.magnific-popup.js"></script>
-<script src="public/assets/js/jquery.mixitup.min.js"></script>
-<script src="public/assets/js/jquery.easing.1.3.js"></script>
-<script src="public/assets/js/jquery.masonry.min.js"></script>
+<script src="../public/assets/js/jquery.magnific-popup.js"></script>
+<script src="../public/assets/js/jquery.mixitup.min.js"></script>
+<script src="../public/assets/js/jquery.easing.1.3.js"></script>
+<script src="../public/assets/js/jquery.masonry.min.js"></script>
 
-<script src="public/assets/js/plugins.js"></script>
-<script src="public/assets/js/main.js"></script>
+<script src="../public/assets/js/plugins.js"></script>
+<script src="../public/assets/js/main.js"></script>
 
 </body>
 </html>

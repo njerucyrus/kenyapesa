@@ -6,7 +6,7 @@
  * Time: 11:49 PM
  */
 
-require_once __DIR__.'/models/class.calculator.php';
+require_once __DIR__ . '/../models/class.calculator.php';
 
 $value = $_POST['value'];
 
