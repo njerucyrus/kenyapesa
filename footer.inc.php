@@ -5,6 +5,8 @@
  * Date: 16/03/2017
  * Time: 00:04
  */
+
+
 ?>
 <section id="footer" class="footer_widget">
     <div class="video_overlay">
@@ -69,8 +71,9 @@
                                         <p>Sign up for our mailing list to get latest updates and offers.</p>
                                         <form class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Email">
-                                                <button type="submit" class="submit_btn"></button>
+                                                <input type="text" class="form-control" placeholder="Name">
+                                                <input type="text" class="form-control" placeholder="Email" style="margin-top: 5px;">
+                                                <input type="submit" value="Subscribe" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">
                                             </div>
 
                                         </form>

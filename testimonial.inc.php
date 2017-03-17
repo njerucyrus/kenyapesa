@@ -9,10 +9,7 @@ require_once __DIR__.'/models/class.feedback.php';
 require_once __DIR__.'/models/user.php';
 ?>
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 <div class="video_overlay">
     <div class="container">
         <div class="row">

@@ -10,6 +10,7 @@
 <head>
     <?php include 'head.inc.php';?>
 </head>
+
 <body data-spy="scroll" data-target=".navbar" data-offset="200">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
