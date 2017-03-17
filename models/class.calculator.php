@@ -5,7 +5,7 @@
  * Date: 3/15/17
  * Time: 11:29 AM
  */
-
+require_once 'class.rate.php';
 class PesaCalc extends Rate {
 
     public function calculate($amount){

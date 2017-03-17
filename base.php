@@ -113,9 +113,11 @@
 
 
     <section id="signup" class="signup">
-        <?php include "signup.php";
+        <?php include "signup.php"; ?>
+    </section>
 
-        ?>
+    <section id="convert" class="singup">
+        <?php include "convert.php";?>
     </section>
 
 
