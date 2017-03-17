@@ -8,11 +8,6 @@
 require_once __DIR__.'/models/class.feedback.php';
 require_once __DIR__.'/models/user.php';
 ?>
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 <div class="video_overlay">
     <div class="container">
         <div class="row">
@@ -22,13 +17,20 @@ require_once __DIR__.'/models/user.php';
 
                         <?php
                         $stmt = UserFeedback::all();
-                        if(is_object($stmt)) {
+                        if(!is_null($stmt)) {
                             while ($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-                                    $user = User::getId($row['user_id']);
-                                    $userData = $user->fetch(PDO::FETCH_ASSOC);
 
-                                    $first_name = $userData['first_name'];
-                                    $last_name = $userData['last_name'];
+                                    $user = User::getId($row['user_id']);
+                                    if (!is_null($user)) {
+                                        $userData = $user->fetch(PDO::FETCH_ASSOC);
+
+                                        $first_name = $userData['first_name'];
+                                        $last_name = $userData['last_name'];
+                                    }
+                                    else{
+                                        $first_name = 'Anonymous';
+                                        $last_name = '';
+                                    }
 
 
                                 ?>
@@ -47,6 +49,10 @@ require_once __DIR__.'/models/user.php';
 
                                 <?php
                             }
+
+                        }
+                        else{
+                            echo "";
                         }
                        ?>
                     </div>

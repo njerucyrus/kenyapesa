@@ -67,8 +67,6 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <?php include 'head.inc.php'; ?>
-    <link rel="stylesheet" href="public/assets/css/custom.css">
-
 
     <style>
         .login_div {
@@ -108,7 +106,7 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
         <div class="row">
 
             <div class="col col-md-6 col-md-offset-3">
-                <form id="login_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+                <form id="login_form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                     <div class="form-group">
                         <label for="email">Email address:</label>
                         <input type="email" name="email" class="form-control" id="email" placeholder="your paypal email"
