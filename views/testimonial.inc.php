@@ -5,8 +5,8 @@
  * Date: 16/03/2017
  * Time: 00:36
  */
-require_once __DIR__.'/models/class.feedback.php';
-require_once __DIR__.'/models/user.php';
+require_once __DIR__ . '/../models/class.feedback.php';
+require_once __DIR__ . '/../models/user.php';
 ?>
 <div class="video_overlay">
     <div class="container">

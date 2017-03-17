@@ -27,6 +27,7 @@
 <!--        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">-->
 
         <link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="public/assets/font-awesome-4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="public/assets/css/magnific-popup.css">
