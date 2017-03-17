@@ -7,27 +7,13 @@
  */
 require_once __DIR__.'/../db/class.db.php';
 require_once 'interface.crud.php';
-class Subscription implements pesaCrud {
+class Subscription implements PesaCrud {
 
-    private $id;
+
     private $name;
     private $email;
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
@@ -68,7 +54,7 @@ class Subscription implements pesaCrud {
 
         global $conn;
        try{
-           $id=$this->getId();
+
            $name =$this->getName();
            $email = $this->getEmail();
 
