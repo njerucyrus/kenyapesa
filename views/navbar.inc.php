@@ -5,7 +5,9 @@
  * Date: 16/03/2017
  * Time: 00:01
  */
+
 ?>
+
 <div class="main_menu_bg">
     <div class="container">
         <div class="row">
@@ -21,7 +23,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="#home">
-                                <img src="public/assets/images/logo.png"/>
+                                <img src="public/assets/images/logo.png" alt=""/>
                             </a>
                         </div>
 

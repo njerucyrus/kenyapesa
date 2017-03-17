@@ -21,7 +21,7 @@ include(__DIR__ . '/../models/class.calculator.php');
 
     function checkLimit() {
         var value = $('#dollars').val();
-        var url = 'views/limits.php';
+        var url = 'limits.php';
         $.ajax(
             {
                 type: 'GET',
@@ -49,7 +49,7 @@ include(__DIR__ . '/../models/class.calculator.php');
         )
     }
     function calculate() {
-        var url = 'views/calc.php';
+        var url = 'calc.php';
         var value = $('#dollars').val();
 
         console.log('sending', value);
@@ -80,9 +80,64 @@ include(__DIR__ . '/../models/class.calculator.php');
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    <?php include 'head.inc.php'; ?>
-    <link rel="stylesheet" href="../public/assets/css/custom.css">
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Kenyapesa Fastest way to transfer money from paypay to mpesa</title>
+    <!-- Meta Tag Manager -->
+    <meta name="description" content="Money transfer services" />
+    <meta name="keywords" content="PayPal to Mpesa" />
+    <meta name="keywords" content="PayPal Mpesa" />
+    <meta name="keywords" content="Withdraw PayPal Kenya" />
+    <!-- / Meta Tag Manager -->
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!--        <!--Google Font link-->
+    <!--        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">-->
+    <!--        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">-->
+
+    <!--    <link rel="stylesheet" href="public/assets/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../public/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../public/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/assets/css/magnific-popup.css">
+
+
+    <!--For Plugins external css-->
+    <link rel="stylesheet" href="../public/assets/css/plugins.css" />
+
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/custom.css" type="text/css">
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="../public/assets/css/responsive.css" />
+
+    <script src="../public/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+    <style>
+        .login_div {
+            margin-top: 125px;
+            margin-bottom: 3.5em;
+            background: transparent;
+
+        }
+
+        input[type=text], input[type=email], input[type=password], input[type=number] {
+            height: 50px;
+            border-radius: 25px !important;
+
+        }
+
+    </style>
+
+
+    <link rel="stylesheet" href="../public/assets/css/custom.css">
 
     <style>
         .login_div {
@@ -114,7 +169,74 @@ include(__DIR__ . '/../models/class.calculator.php');
 <div class="culmn">
 
     <header id="main_menu" class="header navbar-fixed-top">
-        <?php include "navbar.inc.php"; ?>
+
+        <header id="main_menu" class="header navbar-fixed-top">
+            <div class="main_menu_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="nave_menu">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#home">
+                                            <img src="../public/assets/images/logo.png"/>
+                                        </a>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="#home">HOME</a></li>
+                                            <li><a href="#service">Services</a></li>
+                                            <li><a href="#rates">Rates</a></li>
+                                            <li><a href="#about">About</a></li>
+                                            <li><a href="#testimonial">Testimonials</a></li>
+                                            <li><a href="#signup">Join</a></li>
+                                            <li><a href="#contact">CONTACT</a></li>
+
+
+                                            <li>
+                                                <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="glyphicon glyphicon-search"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <form class="navbar-form" role="search">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" placeholder="Search">
+                                                            </div>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+
+                                    </div>
+
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+
+
+
+
     </header> <!--End of header -->
 
 
@@ -141,7 +263,121 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 
     <div id="footers">
-        <?php include "footer.inc.php"; ?>
+
+        <section id="footer" class="footer_widget">
+            <div class="video_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="main_widget">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                                            <div class="footer_logo">
+                                                <img src="../public/assets/images/logo.png" alt="" />
+                                            </div>
+                                            <p>Primierpesa are provides of money transaction services that include transfering money from paypal to mpesa and also tran
+                                                transfering money from Mpesa to your Paypal account.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3  col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>SITEMAP</h4>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="#services">Services</a></li>
+                                                <li><a href="#contact">Contact Us</a></li>
+                                                <li><a href="#signup">Sign up</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3  col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>ACHIVES</h4>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="">January 2015</a></li>
+                                                <li><a href="">February 2015</a></li>
+                                                <li><a href="">March 2015</a></li>
+                                                <li><a href="">April 2015</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>Updates and offers</h4>
+                                                <div class="separator"></div>
+                                            </div>
+
+                                            <div class="footer_subcribs_area">
+                                                <p>Sign up for our mailing list to get latest updates and offers.</p>
+                                                <form class="navbar-form navbar-left" role="search">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="Email">
+                                                        <button type="submit" class="submit_btn"></button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main_footer">
+                            <div class="row">
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="copyright_text">
+                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="http://hudutech.com">Hudutech Solutions</a><?php echo date("Y");?> All Rights Reserved</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="flowus">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-youtube"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                        <!--                            </div>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
     </div>
 
 </div>
