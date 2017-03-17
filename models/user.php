@@ -265,8 +265,7 @@ class User extends Auth implements PesaCrud
     {
         global $conn;
         try{
-            $stmt = $conn->query('DELETE FROM users WHERE id=:id');
-            $stmt->bindParam(':id', $id);
+            $stmt = $conn->query("DELETE FROM users WHERE id='{$id}'");
             $stmt->execute();
             return true;
         } catch (PDOException $e){
@@ -278,13 +277,12 @@ class User extends Auth implements PesaCrud
         }
     }
 
-    public static function getById($id)
+    public static function getById($paypal_email)
     {
         global $conn;
 
         try{
-            $stmt = $conn->query("SELECT * FROM users WHERE id=:id");
-            $stmt->bindParam(':id', $id);
+            $stmt = $conn->query("SELECT * FROM users WHERE paypal_email= '{$paypal_email}'");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -360,8 +358,7 @@ class User extends Auth implements PesaCrud
 
         try{
 
-            $stmt = $conn->query("UPDATE users SET is_admin=1 WHERE id=:id");
-            $stmt->bindParam(":id", $id);
+            $stmt = $conn->query("UPDATE users SET is_admin=1 WHERE id='{$id}'");
             $stmt->execute();
             return true;
 
@@ -387,8 +384,7 @@ class User extends Auth implements PesaCrud
 
         try{
 
-            $stmt = $conn->query("UPDATE users SET is_admin=0 WHERE id=:id");
-            $stmt->bindParam(":id", $id);
+            $stmt = $conn->query("UPDATE users SET is_admin=0 WHERE id='{$id}'");
             $stmt->execute();
             return true;
 
@@ -455,3 +451,5 @@ class User extends Auth implements PesaCrud
 
     }
 }
+
+

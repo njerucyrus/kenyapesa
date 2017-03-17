@@ -30,14 +30,14 @@
 
         <link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="public/assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="public/assets/css/custom.css">
+
 
         <!--For Plugins external css-->
         <link rel="stylesheet" href="public/assets/css/plugins.css" />
 
         <!--Theme custom css -->
         <link rel="stylesheet" href="public/assets/css/style.css">
-
+        <link rel="stylesheet" href="public/assets/css/custom.css" type="text/css">
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="public/assets/css/responsive.css" />
 

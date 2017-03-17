@@ -33,7 +33,10 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#home">HOME</a></li>
-                                <li><a href="#testimonial">Testimonial</a></li>
+                                <li><a href="#service">Services</a></li>
+                                <li><a href="#rates">Rates</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#testimonial">Testimonials</a></li>
                                 <li><a href="#signup">Join</a></li>
                                 <li><a href="#contact">CONTACT</a></li>
 
@@ -62,5 +65,4 @@
         </div>
 
     </div>
-
 </div>

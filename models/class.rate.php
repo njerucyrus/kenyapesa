@@ -5,13 +5,15 @@
  * Date: 3/15/17
  * Time: 11:34 AM
  */
-require_once __DIR__.'/../db/class.db.php';
+require_once __DIR__ . '/../db/class.db.php';
 require_once 'interface.crud.php';
+
 class Rate implements PesaCrud
 {
     private $minValue;
     private $maxValue;
-    private $rateValue;
+    private $fixedDollar;
+    private $percentage;
 
     /**
      * @return mixed
@@ -48,17 +50,33 @@ class Rate implements PesaCrud
     /**
      * @return mixed
      */
-    public function getRateValue()
+    public function getFixedDollar()
     {
-        return $this->rateValue;
+        return $this->fixedDollar;
     }
 
     /**
-     * @param mixed $rateValue
+     * @param mixed $fixedDollar
      */
-    public function setRateValue($rateValue)
+    public function setFixedDollar($fixedDollar)
     {
-        $this->rateValue = $rateValue;
+        $this->fixedDollar = $fixedDollar;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPercentage()
+    {
+        return $this->percentage;
+    }
+
+    /**
+     * @param mixed $percentage
+     */
+    public function setPercentage($percentage)
+    {
+        $this->percentage = $percentage;
     }
 
 
@@ -68,15 +86,17 @@ class Rate implements PesaCrud
 
         $minValue = $this->getMinValue();
         $maxValue = $this->getMaxValue();
-        $rateValue = $this->getRateValue();
+        $fixedDollar = $this->getFixedDollar();
+        $percentage = $this->getPercentage();
 
         try {
-            $stmt = $conn->query("INSERT INTO rates(min_value, max_value, rate_value)
-                                  VALUES (:min_value, :max_value, :rate_value)");
+            $stmt = $conn->query("INSERT INTO rates(min_value, max_value, fixed_dollar, percentage)
+                                  VALUES (:min_value, :max_value, :fixed_dollar, :percentage)");
 
             $stmt->bindParam(":min_value", $minValue);
             $stmt->bindParam(":max_value", $maxValue);
-            $stmt->bindParam(":rate_value", $rateValue);
+            $stmt->bindParam(":fixed_dollar", $fixedDollar);
+            $stmt->bindParam(":percentage", $percentage);
             $stmt->execute();
             return true;
 
@@ -156,8 +176,7 @@ class Rate implements PesaCrud
 
             if ($stmt->rowCount() > 0) {
                 return $stmt;
-            }
-            else {
+            } else {
                 return null;
             }
 
@@ -174,14 +193,13 @@ class Rate implements PesaCrud
     public static function all()
     {
         global $conn;
-        try{
+        try {
             $stmt = $conn->query("SELECT * FROM rates WHERE 1");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
                 return $stmt;
-            }
-            else {
+            } else {
                 return null;
             }
 
@@ -203,34 +221,37 @@ class Rate implements PesaCrud
     {
         global $conn;
 
-            try {
+        try {
 
-                $new_amount = (float)$amount;
+            $new_amount = (float)$amount;
 
-                $stmt = $conn->query("SELECT * FROM rates WHERE min_value<='{$new_amount}' AND max_value>='{$new_amount}'");
+            $stmt = $conn->query("SELECT * FROM rates WHERE min_value<='{$new_amount}' AND max_value>='{$new_amount}'");
 
-                $stmt->execute();
+            $stmt->execute();
 
-                if ($stmt->rowCount() == 1) {
-                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    $rateValue = $row['rate_value'];
-                    return $rateValue;
-                } else {
-                    return null;
-                }
+            if ($stmt->rowCount() == 1) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-            } catch (PDOException $e) {
-
-                print_r(json_encode(array(
-                    'statusCode' => 500,
-                    'message' => "Error " . $e->getMessage()
-                )));
-
+                return array(
+                    "fixed" => $row['fixed_dollar'],
+                    "percentage" => $row['percentage']
+                );
+            } else {
                 return null;
-
             }
+
+
+        } catch (PDOException $e) {
+
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+
+            return null;
+
         }
+    }
 
 }
 

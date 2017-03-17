@@ -6,6 +6,7 @@
  * Time: 00:36
  */
 ?>
+
 <div class="video_overlay">
     <div class="container">
         <div class="row">
@@ -59,7 +60,6 @@
 
                 </div>
             </div>
-
         </div>
     </div>
 </div>
