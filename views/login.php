@@ -11,7 +11,7 @@ require_once __DIR__ . '/../models/class.auth.php';
 require_once __DIR__ . '/../models/user.php';
 
 if(isset($_SESSION['username'])){
-    header("Location: base.php");
+    header("Location: ../base.php");
 }
 
 if (isset($_POST['email']) and isset($_POST['password'])) {
@@ -37,7 +37,7 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
                 $_SESSION['transaction_limit'] = $transaction_limit;
                 $_SESSION['amount_limit'] = $amount_limit;
                 //echo "YOU ARE NOW LOGGED IN AS " . $_SESSION['username'];
-                header("Location: base.php");
+                header("Location: ../base.php");
             } else {
                 echo "ERROR OCCURRED";
             }
