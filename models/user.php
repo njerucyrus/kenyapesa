@@ -304,6 +304,25 @@ class User extends Auth implements PesaCrud
         }
     }
 
+    public static function getId($id){
+        global $conn;
+        try{
+
+            $stmt = $conn->query("SELECT * FROM users WHERE id='{$id}'");
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return $stmt;
+            }
+            else{
+                return null;
+            }
+
+        }catch (PDOException $e){
+
+        }
+    }
     public static function all()
     {
         global $conn;
