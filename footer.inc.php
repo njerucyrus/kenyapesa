@@ -18,9 +18,9 @@
                                     <div class="footer_logo">
                                         <img src="public/assets/images/logo.png" alt="" />
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                        nisi ut aliquip ex ea commodo consequat. </p>
+                                    <p>Primierpesa are provides of money transaction services that include transfering money from paypal to mpesa and also tran
+                                    transfering money from Mpesa to your Paypal account.
+                                    </p>
 
                                 </div>
                             </div>
@@ -33,10 +33,10 @@
                                         <div class="separator"></div>
                                     </div>
                                     <ul>
-                                        <li><a href="">Services</a></li>
-                                        <li><a href="">About Us</a></li>
-                                        <li><a href="">Our Team</a></li>
-                                        <li><a href="">Portfolio</a></li>
+                                        <li><a href="#services">Services</a></li>
+                                        <li><a href="#contact">Contact Us</a></li>
+                                        <li><a href="#signup">Sign up</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <div class="single_widget wow fadeIn" data-wow-duration="800ms">
 
                                     <div class="footer_title">
-                                        <h4>NEWSLETTER</h4>
+                                        <h4>Updates and offers</h4>
                                         <div class="separator"></div>
                                     </div>
 
@@ -69,7 +69,7 @@
                                         <p>Sign up for our mailing list to get latest updates and offers.</p>
                                         <form class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Search">
+                                                <input type="text" class="form-control" placeholder="Email">
                                                 <button type="submit" class="submit_btn"></button>
                                             </div>
 

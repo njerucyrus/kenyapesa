@@ -5,8 +5,14 @@
  * Date: 16/03/2017
  * Time: 00:36
  */
+require_once __DIR__.'/models/class.feedback.php';
+require_once __DIR__.'/models/user.php';
 ?>
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 <div class="video_overlay">
     <div class="container">
         <div class="row">
@@ -14,48 +20,35 @@
                 <div class="col-md-12" data-wow-delay="0.2s">
                     <div class="main_teastimonial_slider text-center">
 
-                        <div class="single_testimonial">
-                            <div class="row">
-                                <div class="col-sm-8 col-sm-offset-2">
-                                    <i class="fa fa-quote-left"></i>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                                        in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-                                        hidden in the middle of text. All the Lorem  ww</p>
-                                    <div class="single_test_author">
-                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
+                        <?php
+                        $stmt = UserFeedback::all();
+                        if(is_object($stmt)) {
+                            while ($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    $user = User::getId($row['user_id']);
+                                    $userData = $user->fetch(PDO::FETCH_ASSOC);
+
+                                    $first_name = $userData['first_name'];
+                                    $last_name = $userData['last_name'];
+
+
+                                ?>
+
+                                <div class="single_testimonial">
+                                    <div class="row">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <i class="fa fa-quote-left"></i>
+                                            <p><?php echo $row['text'];?></p>
+                                            <div class="single_test_author">
+                                                <h4><?php echo $first_name . " ".$last_name; ?> </h4>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="single_testimonial">
-                            <div class="row">
-                                <div class="col-sm-8 col-sm-offset-2">
-                                    <i class="fa fa-quote-left"></i>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                                        alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-                                        hidden in the middle of text. All the Lorem</p>
-                                    <div class="single_test_author">
-                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_testimonial">
-                            <div class="row">
-                                <div class="col-sm-8 col-sm-offset-2">
-                                    <i class="fa fa-quote-left"></i>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                        suffered alteration in some form, by injected humour, or randomised words which don't look even
-                                        slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
-                                        isn't anything embarrassing hidden in the middle of text. All the Lorem</p>
-                                    <div class="single_test_author">
-                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                                <?php
+                            }
+                        }
+                       ?>
                     </div>
 
                 </div>
