@@ -27,7 +27,7 @@
                                             </div>
                                             <div class="single_info_text">
                                                 <h3>VISIT US</h3>
-                                                <p>20, 2 Elizabeth ST, Melbourne, Victoria 3000</p>
+                                                <p>www.premierpesa.co.ke</p>
                                             </div>
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                             </div>
                                             <div class="single_info_text">
                                                 <h3>MAIL US</h3>
-                                                <p>support@yourmail.com</p>
+                                                <p>support@premierpesa.co.ke</p>
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@
                                             </div>
                                             <div class="single_info_text">
                                                 <h3>CALL US</h3>
-                                                <p>+(100) 123 4567 890</p>
+                                                <p>0723013549</p>
                                             </div>
                                         </div>
                                     </div>

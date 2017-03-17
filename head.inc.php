@@ -9,7 +9,16 @@
 <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Kenyapesa Fastest way to transfer money from paypay to mpesa</title>
-        <meta name="description" content="">
+<!-- Meta Tag Manager -->
+<meta name="description" content="Money transfer services" />
+<meta name="keywords" content="PayPal to Mpesa" />
+<meta name="keywords" content="PayPal Mpesa" />
+<meta name="keywords" content="Withdraw PayPal Kenya" />
+<!-- / Meta Tag Manager -->
+
+
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 

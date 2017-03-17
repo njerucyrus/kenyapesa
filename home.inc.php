@@ -13,8 +13,8 @@
                 <div class="main_home_slider text-center">
                     <div class="single_home_slider">
                         <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                            <h1>WELCOME TO PremierPesa</h1>
-                            <p>We transfer money internationaly</p>
+                            <h1>WELCOME TO PREMIERPESA</h1>
+                            <p> It's easy and fast to transfer money from PayPal to Mpesa </p>
                             <div class="home_btn">
                                 <a href="#convert" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert </a>
                                 <a href="#signup" class="btn btn-primary">Sign Up</a>
@@ -24,8 +24,8 @@
                     </div>
                     <div class="single_home_slider">
                         <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                            <h1>Its fast reliable and efficient</h1>
-                            <p>One of a kind</p>
+                            <h1>MONEY SERVICES</h1>
+                            <p>Sign up to enjoy fast and reliable services in moving money from Paypal to Mpesa and also from Mpesa to Paypal</p>
                             <div class="home_btn">
                                 <a href="#convert" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert </a>
                                 <a href="#signup" class="btn btn-primary">Sign Up</a>
