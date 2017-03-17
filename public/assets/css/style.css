@@ -562,10 +562,27 @@ input::-ms-input-placeholder {
     /*background-color: transparent;*/
 }
 .main_menu_bg .navbar-default {
-    background-color: transparent;
+    /*background-color: transparent;*/
     border-color: transparent;
-    transition: all .6s;
-    margin: 15px auto;
+    /*transition: all .6s;*/
+    /*margin: 15px auto;*/
+
+    /*added*/
+    /*background-color: #1a1a1a;*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-color:rgba(34, 61, 97, 0.64);
+    -webkit-transition:all .3s;
+    -moz-transition:all .3s;
+    transition:all .3s;
+    height: 75px;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
     color:#ff7200;

@@ -10,7 +10,6 @@ require_once __DIR__.'/../db/class.db.php';
 
 
 class Auth{
-
     private $token;
     public function authenticate($username, $password)
     {

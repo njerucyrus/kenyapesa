@@ -12,6 +12,7 @@ class Limit implements PesaCrud {
 
     private $minLimit;
     private $maxLimit;
+    private $exchangeRate;
 
     /**
      * @return mixed
@@ -48,6 +49,24 @@ class Limit implements PesaCrud {
     /**
      * @return mixed
      */
+    public function getExchangeRate()
+    {
+        return $this->exchangeRate;
+    }
+
+    /**
+     * @param mixed $exchangeRate
+     */
+    public function setExchangeRate($exchangeRate)
+    {
+        $this->exchangeRate = $exchangeRate;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
     public function create()
     {
         global $conn;
@@ -55,12 +74,16 @@ class Limit implements PesaCrud {
 
             $minLimit = $this->getMinLimit();
             $maxLimit = $this->getMaxLimit();
+            $exchangeRate = $this->getExchangeRate();
 
-            $stmt = $conn->query("INSERT INTO limits(min_limit, max_limit)
-                                  VALUES (:min_limit, :max_limit)");
+
+
+            $stmt = $conn->query("INSERT INTO limits(min_limit, max_limit, exchange_rate)
+                                  VALUES (:min_limit, :max_limit, :exchange_rate)");
 
             $stmt->bindParam(":min_limit", $minLimit);
             $stmt->bindParam(":max_limit", $maxLimit);
+            $stmt->bindParam(":exchange_rate", $exchangeRate);
             $stmt->execute();
             return true;
 
@@ -87,12 +110,14 @@ class Limit implements PesaCrud {
 
             $minLimit = $this->getMinLimit();
             $maxLimit = $this->getMaxLimit();
+            $exchangeRate = $this->getExchangeRate();
 
-            $stmt = $conn->query("UPDATE limits SET min_limit=:min_limit, max_limit=:min_limit
+            $stmt = $conn->query("UPDATE limits SET min_limit=:min_limit, max_limit=:min_limit, exchange_rate=:exchange_rate
                                   WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->bindParam(":min_limit", $minLimit);
             $stmt->bindParam(":max_limit", $maxLimit);
+            $stmt->bindParam(":exchange_rate", $exchangeRate);
             $stmt->execute();
             return true;
         } catch (PDOException $e) {
@@ -214,5 +239,34 @@ class Limit implements PesaCrud {
             return null;
         }
     }
+    public static function getCurrentExchangeRate(){
 
+        global $conn;
+        try{
+
+            $stmt = $conn->query("SELECT * FROM limits LIMIT 1");
+            $stmt->execute();
+            if($stmt->rowCount() == 1) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                return array(
+                    "exchange_rate"=>$row['exchange_rate'],
+
+                );
+
+            }
+            else{
+                return null;
+            }
+
+        } catch (PDOException $e) {
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+
+            return null;
+        }
+
+    }
 }
+

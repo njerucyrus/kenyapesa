@@ -31,16 +31,19 @@
     </section>
 
 
-    <section id="service" class="service">
+    <section id="service" class="service" style="margin-top: 10px;">
         <?php include "services.inc.php"; ?>
     </section>
 
-
+    <section id="rates" class="rates">
+        <?php include 'rates.php'?>
+    </section>
 
 
     <section id="about" class="about">
         <?php include "about.inc.php"; ?>
     </section>
+
 
 
     <section id="counter" class="counter">
@@ -115,11 +118,6 @@
     <section id="signup" class="signup">
         <?php include "signup.php"; ?>
     </section>
-
-    <section id="convert" class="singup">
-        <?php include "convert.php";?>
-    </section>
-
 
     <section id="contact" class="contact">
         <?php include "contact.inc.php"; ?>

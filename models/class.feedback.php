@@ -7,7 +7,7 @@
  */
 
 require_once 'interface.crud.php';
-require_once '../db/class.db.php';
+require_once __DIR__.'/../db/class.db.php';
 
 class UserFeedback implements PesaCrud
 {
@@ -163,7 +163,7 @@ class UserFeedback implements PesaCrud
         try {
 
             $stmt = $conn->query("SELECT * FROM feedbacks WHERE approved=1");
-            $stmt->bindParam(":id", $id);
+            $stmt->execute();
 
             if ($stmt->rowCount()) {
                 return $stmt;
