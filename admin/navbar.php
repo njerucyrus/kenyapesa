@@ -22,8 +22,7 @@
         <ul class="nav navbar-nav ">
             <li><a href="dashboard.php">Users</a></li>
             <li><a href="transactions_list.php">Transactions</a></li>
-            <li><a href="#">Rates</a></li>
-            <li><a href="#">Limits</a></li>
+            <li><a href="admin_rates.php">Rates & Limits</a></li>
             <li><a href="#">Reviews</a></li>
 <!--            <li class="dropdown">-->
 <!--                <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Farm Records-->

@@ -120,17 +120,21 @@ class Rate implements PesaCrud
 
         $minValue = $this->getMinValue();
         $maxValue = $this->getMaxValue();
-        $rateValue = $this->getRateValue();
+        $fixedDollar = $this->getFixedDollar();
+        $percentage = $this->getPercentage();
 
         try {
 
-            $stmt = $conn->prepare("UPDATE rates SET min_value=:min_value, max_value=:max_value, rate_value=:rate_value
+            $stmt = $conn->prepare("UPDATE rates SET min_value=:min_value, max_value=:max_value, 
+                                  fixed_dollar=:fixed_dollar, percentage=:percentage
                                   WHERE id=:id");
 
             $stmt->bindParam(":id", $id);
             $stmt->bindParam(":min_value", $minValue);
             $stmt->bindParam(":max_value", $maxValue);
-            $stmt->bindParam(":rate_value", $rateValue);
+            $stmt->bindParam(":fixed_dollar", $fixedDollar);
+            $stmt->bindParam(":percentage", $percentage);
+
             $stmt->execute();
             return true;
 
