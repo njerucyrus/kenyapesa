@@ -78,7 +78,7 @@ class Limit implements PesaCrud {
 
 
 
-            $stmt = $conn->query("INSERT INTO limits(min_limit, max_limit, exchange_rate)
+            $stmt = $conn->prepare("INSERT INTO limits(min_limit, max_limit, exchange_rate)
                                   VALUES (:min_limit, :max_limit, :exchange_rate)");
 
             $stmt->bindParam(":min_limit", $minLimit);
@@ -112,7 +112,7 @@ class Limit implements PesaCrud {
             $maxLimit = $this->getMaxLimit();
             $exchangeRate = $this->getExchangeRate();
 
-            $stmt = $conn->query("UPDATE limits SET min_limit=:min_limit, max_limit=:min_limit, exchange_rate=:exchange_rate
+            $stmt = $conn->prepare("UPDATE limits SET min_limit=:min_limit, max_limit=:min_limit, exchange_rate=:exchange_rate
                                   WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->bindParam(":min_limit", $minLimit);
@@ -141,7 +141,7 @@ class Limit implements PesaCrud {
     {
         global $conn;
         try{
-            $stmt = $conn->query("DELETE FROM limits WHERE id=:id");
+            $stmt = $conn->prepare("DELETE FROM limits WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -165,7 +165,7 @@ class Limit implements PesaCrud {
         global $conn;
         try{
 
-            $stmt = $conn->query("SELECT * FROM limits WHERE id=:id");
+            $stmt = $conn->prepare("SELECT * FROM limits WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             if($stmt->rowCount()> 0) {
@@ -193,7 +193,7 @@ class Limit implements PesaCrud {
         global $conn;
         try{
 
-            $stmt = $conn->query("SELECT * FROM limits WHERE 1");
+            $stmt = $conn->prepare("SELECT * FROM limits WHERE 1");
             $stmt->execute();
             if($stmt->rowCount() > 0 ) {
                 return $stmt;
@@ -216,7 +216,7 @@ class Limit implements PesaCrud {
         global $conn;
         try{
 
-            $stmt = $conn->query("SELECT * FROM limits LIMIT 1");
+            $stmt = $conn->prepare("SELECT * FROM limits LIMIT 1");
             $stmt->execute();
             if($stmt->rowCount() == 1) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -244,7 +244,7 @@ class Limit implements PesaCrud {
         global $conn;
         try{
 
-            $stmt = $conn->query("SELECT * FROM limits LIMIT 1");
+            $stmt = $conn->prepare("SELECT * FROM limits LIMIT 1");
             $stmt->execute();
             if($stmt->rowCount() == 1) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);

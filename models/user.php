@@ -218,7 +218,7 @@ class User extends Auth implements PesaCrud
     {
         global $conn;
 
-        try{
+        try {
 
             $firstName = $this->getFirstName();
             $lastName = $this->getLastName();
@@ -230,7 +230,7 @@ class User extends Auth implements PesaCrud
             $transactionLimit = $this->getTransactionLimit();
             $password = $this->getPassword();
 
-            $stmt = $conn->query("UPDATE users SET first_name=:first_name, last_name=:last_name,
+            $stmt = $conn->prepare("UPDATE users SET first_name=:first_name, last_name=:last_name,
                                  paypal_email=:paypal_email,phone_number=:phone_number,
                                   id_no=:id_no, status=:status, amount_limit=:amount_limit,
                                   transaction_limit=:transaction_limit, password=:password
@@ -251,7 +251,7 @@ class User extends Auth implements PesaCrud
             return true;
 
 
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
 
             print_r(json_encode(array(
                 'statusCode' => 500,
@@ -264,11 +264,11 @@ class User extends Auth implements PesaCrud
     public static function delete($id)
     {
         global $conn;
-        try{
-            $stmt = $conn->query("DELETE FROM users WHERE id='{$id}'");
+        try {
+            $stmt = $conn->prepare("DELETE FROM users WHERE id='{$id}'");
             $stmt->execute();
             return true;
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
                 'message' => "Error " . $e->getMessage()
@@ -281,19 +281,18 @@ class User extends Auth implements PesaCrud
     {
         global $conn;
 
-        try{
-            $stmt = $conn->query("SELECT * FROM users WHERE paypal_email= '{$paypal_email}'");
+        try {
+            $stmt = $conn->prepare("SELECT * FROM users WHERE paypal_email= '{$paypal_email}'");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
                 return $stmt;
-            }
-            else{
+            } else {
                 return null;
             }
 
 
-        }catch (PDOException $e){
+        } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
                 'message' => "Error " . $e->getMessage()
@@ -302,43 +301,43 @@ class User extends Auth implements PesaCrud
         }
     }
 
-    public static function getId($id){
+    public static function getId($id)
+    {
         global $conn;
-        try{
+        try {
 
-            $stmt = $conn->query("SELECT * FROM users WHERE id='{$id}'");
+            $stmt = $conn->prepare("SELECT * FROM users WHERE id='{$id}'");
 
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
                 return $stmt;
-            }
-            else{
+            } else {
                 return null;
             }
 
-        }catch (PDOException $e){
+        } catch (PDOException $e) {
 
         }
     }
+
     public static function all()
     {
         global $conn;
 
-        try{
-            $stmt = $conn->query("SELECT * FROM users WHERE 1");
+        try {
+            $stmt = $conn->prepare("SELECT * FROM users WHERE 1");
 
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
                 return $stmt;
-            }
-            else{
+            } else {
                 return null;
             }
 
 
-        }catch (PDOException $e){
+        } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
                 'message' => "Error " . $e->getMessage()
@@ -349,46 +348,22 @@ class User extends Auth implements PesaCrud
 
     /**
      * @param $id
+     * @param $status
      * @return bool
-     * make the user admin
+     * add or remove admin status
      */
-    public static function promote($id)
+    public static function promoteDemote($id, $status)
     {
         global $conn;
 
-        try{
+        try {
 
-            $stmt = $conn->query("UPDATE users SET is_admin=1 WHERE id='{$id}'");
+            $stmt = $conn->prepare("UPDATE users SET is_admin='{$status}' WHERE id=:id");
+            $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
 
-        } catch (PDOException $e){
-
-            print_r(json_encode(array(
-                'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
-            )));
-            return false;
-
-        }
-
-    }
-
-    /**
-     * @param $id
-     * @return bool
-     * remove the user's admin privileges
-     */
-    public static function demote($id){
-        global $conn;
-
-        try{
-
-            $stmt = $conn->query("UPDATE users SET is_admin=0 WHERE id='{$id}'");
-            $stmt->execute();
-            return true;
-
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
 
             print_r(json_encode(array(
                 'statusCode' => 500,
@@ -404,17 +379,18 @@ class User extends Auth implements PesaCrud
      * @return bool
      * Approve the user account
      */
-    public static function approveAccount($id){
+    public static function approveAccount($id)
+    {
         global $conn;
 
-        try{
+        try {
 
-            $stmt = $conn->query("UPDATE users SET status='approved' WHERE id=:id");
+            $stmt = $conn->prepare("UPDATE users SET `status`='approved' WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
 
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
 
             print_r(json_encode(array(
                 'statusCode' => 500,
@@ -424,22 +400,23 @@ class User extends Auth implements PesaCrud
 
         }
     }
+
 
     /**
      * @param $id
+     * @param $status
      * @return bool
-     * block the user account
      */
-    public static function blockAccount($id)
+    public static function blockUnblockAccount($id, $status)
     {
         global $conn;
-        try{
+        try {
 
-            $stmt = $conn->query("UPDATE users SET status='blocked' WHERE id=:id");
+            $stmt = $conn->prepare("UPDATE users SET `status`='{$status}' WHERE `id`=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
 
             print_r(json_encode(array(
                 'statusCode' => 500,
@@ -450,6 +427,31 @@ class User extends Auth implements PesaCrud
         }
 
     }
-}
 
+    public static function updateLimits($id, $limits)
+    {
+        global $conn;
+        if (is_array($limits)) {
+            $transactionLimit = $limits['transaction_limit'];
+            $amountLimit = $limits['amount_limit'];
+            try {
+                $stmt = $conn->prepare("UPDATE users SET transaction_limit =:transaction_limit, amount_limit=:amount_limit
+                                    WHERE id=:id");
+                $stmt->bindParam(":id", $id);
+                $stmt->bindParam(":transaction_limit", $transactionLimit);
+                $stmt->bindParam(":amount_limit", $amountLimit);
+                $stmt->execute();
+                return true;
+            } catch (PDOException $e) {
+                print_r(json_encode(array(
+                    'statusCode' => 500,
+                    'message' => "Error " . $e->getMessage()
+                )));
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+}
 

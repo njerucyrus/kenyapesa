@@ -90,7 +90,7 @@ class Rate implements PesaCrud
         $percentage = $this->getPercentage();
 
         try {
-            $stmt = $conn->query("INSERT INTO rates(min_value, max_value, fixed_dollar, percentage)
+            $stmt = $conn->prepare("INSERT INTO rates(min_value, max_value, fixed_dollar, percentage)
                                   VALUES (:min_value, :max_value, :fixed_dollar, :percentage)");
 
             $stmt->bindParam(":min_value", $minValue);
@@ -124,7 +124,7 @@ class Rate implements PesaCrud
 
         try {
 
-            $stmt = $conn->query("UPDATE rates SET min_value=:min_value, max_value=:max_value, rate_value=:rate_value
+            $stmt = $conn->prepare("UPDATE rates SET min_value=:min_value, max_value=:max_value, rate_value=:rate_value
                                   WHERE id=:id");
 
             $stmt->bindParam(":id", $id);
@@ -149,7 +149,7 @@ class Rate implements PesaCrud
         global $conn;
         try {
 
-            $stmt = $conn->query("DELETE FROM rates WHERE id=:id");
+            $stmt = $conn->prepare("DELETE FROM rates WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -169,7 +169,7 @@ class Rate implements PesaCrud
     {
         global $conn;
         try {
-            $stmt = $conn->query("SELECT * FROM rates WHERE id=:id");
+            $stmt = $conn->prepare("SELECT * FROM rates WHERE id=:id");
 
             $stmt->bindParam(":id", $id);
             $stmt->execute();
@@ -194,7 +194,7 @@ class Rate implements PesaCrud
     {
         global $conn;
         try {
-            $stmt = $conn->query("SELECT * FROM rates WHERE 1");
+            $stmt = $conn->prepare("SELECT * FROM rates WHERE 1");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -225,7 +225,7 @@ class Rate implements PesaCrud
 
             $new_amount = (float)$amount;
 
-            $stmt = $conn->query("SELECT * FROM rates WHERE min_value<='{$new_amount}' AND max_value>='{$new_amount}'");
+            $stmt = $conn->prepare("SELECT * FROM rates WHERE min_value<='{$new_amount}' AND max_value>='{$new_amount}'");
 
             $stmt->execute();
 
