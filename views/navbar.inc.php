@@ -23,7 +23,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="#home">
-                                <img src="public/assets/images/logo.png" alt=""/>
+                                <img src="public/assets/images/logo.png" alt="PremierPesa"/>
                             </a>
                         </div>
 
@@ -45,7 +45,7 @@
 
                                 <li>
                                     <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <span class="glyphicon glyphicon-search"></span></a>
+                                        <span class="fa fa-search"></span></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <form class="navbar-form" role="search">

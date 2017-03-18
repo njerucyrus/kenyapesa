@@ -8,7 +8,8 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    <?php include 'views/head.inc.php';?>
+
+    <?php include "views/head.inc.php"; ?>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="200">

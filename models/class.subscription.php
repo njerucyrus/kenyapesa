@@ -55,11 +55,10 @@ class Subscription implements PesaCrud {
         global $conn;
        try{
 
-           $name =$this->getName();
+           $name = $this->getName();
            $email = $this->getEmail();
 
-           $stmt = $conn ->query("INSERT INTO subscription( name, email)
-                                                          VALUES (:name,:email)");
+           $stmt = $conn->prepare("INSERT INTO subscription(name, email) VALUES(:name,:email)");
            $stmt->bindParam(":name", $name);
            $stmt->bindParam(":email", $email);
            $stmt->execute();
@@ -86,7 +85,7 @@ class Subscription implements PesaCrud {
         // TODO: Implement delete() method.
         global $conn;
         try{
-            $stmt = $conn->query("DELETE FROM limits WHERE id=:id");
+            $stmt = $conn->prepare("DELETE FROM limits WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -107,7 +106,7 @@ class Subscription implements PesaCrud {
         global $conn;
         try{
 
-            $stmt = $conn->query("SELECT * FROM subscription WHERE id=:id");
+            $stmt = $conn->prepare("SELECT * FROM subscription WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             if($stmt->rowCount()> 0) {
@@ -133,7 +132,7 @@ class Subscription implements PesaCrud {
         global $conn;
         try{
 
-            $stmt = $conn->query("SELECT * FROM subscription WHERE 1");
+            $stmt = $conn->prepare("SELECT * FROM subscription WHERE 1");
             $stmt->execute();
             if($stmt->rowCount() > 0 ) {
                 return $stmt;

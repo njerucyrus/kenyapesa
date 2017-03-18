@@ -69,11 +69,13 @@
                                     </div>
 
                                     <div class="footer_subcribs_area">
+                                        <?php include_once('views/subscribe.php');?>
                                         <p>Sign up for our mailing list to get latest updates and offers.</p>
-                                        <form class="navbar-form navbar-left" role="search">
+                                        <p><?php echo $message; ?></p>
+                                        <form class="navbar-form navbar-left" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."#footers"?>" method="POST">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Name">
-                                                <input type="text" class="form-control" placeholder="Email" style="margin-top: 5px;">
+                                                <input type="text" class="form-control" placeholder="Name" name="name">
+                                                <input type="text" class="form-control" placeholder="Email" name="email" style="margin-top: 5px;">
                                                 <input type="submit" value="Subscribe" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">
                                             </div>
 

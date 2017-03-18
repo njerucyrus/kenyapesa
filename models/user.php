@@ -230,7 +230,7 @@ class User extends Auth implements PesaCrud
             $transactionLimit = $this->getTransactionLimit();
             $password = $this->getPassword();
 
-            $stmt = $conn->query("UPDATE users SET first_name=:first_name, last_name=:last_name,
+            $stmt = $conn->prepare("UPDATE users SET first_name=:first_name, last_name=:last_name,
                                  paypal_email=:paypal_email,phone_number=:phone_number,
                                   id_no=:id_no, status=:status, amount_limit=:amount_limit,
                                   transaction_limit=:transaction_limit, password=:password

@@ -197,28 +197,16 @@ include(__DIR__ . '/../models/class.calculator.php');
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li><a href="#home">HOME</a></li>
-                                            <li><a href="#service">Services</a></li>
-                                            <li><a href="#rates">Rates</a></li>
-                                            <li><a href="#about">About</a></li>
-                                            <li><a href="#testimonial">Testimonials</a></li>
-                                            <li><a href="#signup">Join</a></li>
-                                            <li><a href="#contact">CONTACT</a></li>
+                                            <li><a href="../base.php#home">HOME</a></li>
+                                            <li><a href="../base.php#service">Services</a></li>
+                                            <li><a href="../base.php#rates">Rates</a></li>
+                                            <li><a href="../base.php#about">About</a></li>
+                                            <li><a href="../base.php#testimonial">Testimonials</a></li>
+                                            <li><a href="../base.php#signup">Join</a></li>
+                                            <li><a href="../base.php#contact">CONTACT</a></li>
 
 
-                                            <li>
-                                                <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="glyphicon glyphicon-search"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <form class="navbar-form" role="search">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" placeholder="Search">
-                                                            </div>
-                                                        </form>
-                                                    </li>
-                                                </ul>
-                                            </li>
+
                                         </ul>
 
 
