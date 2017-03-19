@@ -153,5 +153,7 @@
 <script src="public/assets/js/plugins.js"></script>
 <script src="public/assets/js/main.js"></script>
 
+<script src="https://uhchat.net/code.php?f=3ff3c3"></script>
+
 </body>
 </html>
