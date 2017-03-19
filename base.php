@@ -113,6 +113,7 @@
 
 
     <section id="testimonial" class="testimonial">
+
         <?php include "views/testimonial.inc.php"; ?>
     </section>
 

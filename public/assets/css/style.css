@@ -1343,15 +1343,17 @@ button.btn-md:hover {
 /* Carousel */
 .testimonial{
     background: url(../images/testbg.jpg) no-repeat center center;
+
     background-size: cover;
 }
 .main_testimonial {
     color:#fff;
+    background-color: rgba(41, 39, 34, 0.6);
 }
 .main_testimonial .single_testimonial i{
     color:#fff;
     margin-bottom:30px;
-    font-size:2rem;
+    font-size:4rem;
     padding: 2px;
 }
 .main_testimonial .single_testimonial p{
