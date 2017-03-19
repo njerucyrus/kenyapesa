@@ -7,13 +7,14 @@
  */
 require_once __DIR__.'/../db/class.db.php';
 require_once 'interface.crud.php';
+require_once  'trait.mail.php';
+
 class Subscription implements PesaCrud {
 
+    use CustomMailing;
 
     private $name;
     private $email;
-
-
 
     /**
      * @return mixed
