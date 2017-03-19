@@ -90,7 +90,7 @@ class Rate implements PesaCrud
         $percentage = $this->getPercentage();
 
         try {
-            $stmt = $conn->query("INSERT INTO rates(min_value, max_value, fixed_dollar, percentage)
+            $stmt = $conn->prepare("INSERT INTO rates(min_value, max_value, fixed_dollar, percentage)
                                   VALUES (:min_value, :max_value, :fixed_dollar, :percentage)");
 
             $stmt->bindParam(":min_value", $minValue);
@@ -120,17 +120,21 @@ class Rate implements PesaCrud
 
         $minValue = $this->getMinValue();
         $maxValue = $this->getMaxValue();
-        $rateValue = $this->getRateValue();
+        $fixedDollar = $this->getFixedDollar();
+        $percentage = $this->getPercentage();
 
         try {
 
-            $stmt = $conn->query("UPDATE rates SET min_value=:min_value, max_value=:max_value, rate_value=:rate_value
+            $stmt = $conn->prepare("UPDATE rates SET min_value=:min_value, max_value=:max_value, 
+                                  fixed_dollar=:fixed_dollar, percentage=:percentage
                                   WHERE id=:id");
 
             $stmt->bindParam(":id", $id);
             $stmt->bindParam(":min_value", $minValue);
             $stmt->bindParam(":max_value", $maxValue);
-            $stmt->bindParam(":rate_value", $rateValue);
+            $stmt->bindParam(":fixed_dollar", $fixedDollar);
+            $stmt->bindParam(":percentage", $percentage);
+
             $stmt->execute();
             return true;
 
@@ -149,7 +153,7 @@ class Rate implements PesaCrud
         global $conn;
         try {
 
-            $stmt = $conn->query("DELETE FROM rates WHERE id=:id");
+            $stmt = $conn->prepare("DELETE FROM rates WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -169,7 +173,7 @@ class Rate implements PesaCrud
     {
         global $conn;
         try {
-            $stmt = $conn->query("SELECT * FROM rates WHERE id=:id");
+            $stmt = $conn->prepare("SELECT * FROM rates WHERE id=:id");
 
             $stmt->bindParam(":id", $id);
             $stmt->execute();
@@ -194,7 +198,7 @@ class Rate implements PesaCrud
     {
         global $conn;
         try {
-            $stmt = $conn->query("SELECT * FROM rates WHERE 1");
+            $stmt = $conn->prepare("SELECT * FROM rates WHERE 1");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -225,7 +229,7 @@ class Rate implements PesaCrud
 
             $new_amount = (float)$amount;
 
-            $stmt = $conn->query("SELECT * FROM rates WHERE min_value<='{$new_amount}' AND max_value>='{$new_amount}'");
+            $stmt = $conn->prepare("SELECT * FROM rates WHERE min_value<='{$new_amount}' AND max_value>='{$new_amount}'");
 
             $stmt->execute();
 

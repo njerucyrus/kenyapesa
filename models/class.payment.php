@@ -7,10 +7,13 @@
  */
 
 require_once 'interface.crud.php';
+require 'trait.query.php';
 require_once __DIR__.'/../db/class.db.php';
+
 
 class Payment implements PesaCrud
 {
+    use ComplexQuery;
 
     private $userId;
     private $paypalEmail;
@@ -147,7 +150,7 @@ class Payment implements PesaCrud
 
         try {
 
-            $stmt = $conn->query("INSERT INTO payments(transaction_id, item_id, user_id, paypal_email, dollars, shillings, status)
+            $stmt = $conn->prepare("INSERT INTO payments(transaction_id, item_id, user_id, paypal_email, dollars, shillings, status)
                                   VALUES (:transaction_id, :item_id, :user_id, :paypal_email, :dollars, :shillings, :status)");
 
             $stmt->bindParam(":transaction_id", $transactionId);
@@ -182,7 +185,7 @@ class Payment implements PesaCrud
         $status = $this->getStatus();
         try {
 
-            $stmt = $conn->query("UPDATE payments SET status=:status
+            $stmt = $conn->prepare("UPDATE payments SET status=:status
                                   WHERE transaction_id=:transaction_id");
 
             $stmt->bindParam(":transaction_id", $transactionId);
@@ -205,7 +208,7 @@ class Payment implements PesaCrud
         global $conn;
 
         try {
-            $stmt = $conn->query("DELETE FROM payments WHERE id=:id");
+            $stmt = $conn->prepare("DELETE FROM payments WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -230,7 +233,7 @@ class Payment implements PesaCrud
 
         try {
 
-            $stmt  = $conn->query("SELECT * FROM payments WHERE id=:id AND status='success'");
+            $stmt  = $conn->prepare("SELECT * FROM payments WHERE id=:id AND status='success'");
 
             $stmt->bindParam(":id", $id);
             $stmt->execute();
@@ -259,7 +262,7 @@ class Payment implements PesaCrud
         global $conn;
 
         try {
-            $stmt = $conn->query("SELECT * FROM payments WHERE status='success'");
+            $stmt = $conn->prepare("SELECT * FROM payments WHERE status='success'");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -278,3 +281,4 @@ class Payment implements PesaCrud
     }
 
 }
+

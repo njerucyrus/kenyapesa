@@ -29,7 +29,7 @@ require_once __DIR__ . '/../models/class.limits.php';
             <div class="table-responsive" style="background-color: rgba(0,0,0,0.14)">
                 <table class="table">
                     <thead>
-                    <tr style='font-size: 2.0em;'>
+                    <tr style='font-size: 2.0em; text-align: center;'>
                         <th>From</th>
                         <th>To</th>
                         <th>Fixed Charges</th>
@@ -41,7 +41,7 @@ require_once __DIR__ . '/../models/class.limits.php';
                     $stmt = Rate::all();
                     if(is_object($stmt)) {
                         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                           echo "<tr style='font-size: 2.0em;'><td>".$row['min_value']." &#36;</td>".
+                           echo "<tr style='font-size: 2.0em; text-align: center;'><td>".$row['min_value']." &#36;</td>".
                                "<td>".$row['max_value']." &#36;</td><td>".
                                $row['fixed_dollar']." &#36;</td><td>".
                                $row['percentage']." &#37;</td>
@@ -56,7 +56,7 @@ require_once __DIR__ . '/../models/class.limits.php';
                 </table>
             </div>
             <div style="margin-top: 10px;">
-                <a href="convert.php" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert Now</a>
+                <a href="/kenyapesa/views/convert.php" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert Now</a>
             </div>
 
         </div>

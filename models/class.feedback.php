@@ -73,7 +73,7 @@ class UserFeedback implements PesaCrud
         $approved = $this->getApproved();
 
         try {
-            $stmt = $conn->query("INSERT INTO feedbacks(user_id, text, approved)
+            $stmt = $conn->prepare("INSERT INTO feedbacks(user_id, text, approved)
                                   VALUES(:user_id, :text, :approved)");
 
             $stmt->bindParam(":user_id", $userId);
@@ -99,7 +99,7 @@ class UserFeedback implements PesaCrud
 
         try {
 
-            $stmt = $conn->query("UPDATE feedbacks SET text=:text WHERE id=:id");
+            $stmt = $conn->prepare("UPDATE feedbacks SET text=:text WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -117,7 +117,7 @@ class UserFeedback implements PesaCrud
     {
         global $conn;
         try {
-            $stmt = $conn->query("DELETE FROM feedbacks WHERE id=:id");
+            $stmt = $conn->prepare("DELETE FROM feedbacks WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -137,7 +137,7 @@ class UserFeedback implements PesaCrud
 
         try {
 
-            $stmt = $conn->query("SELECT * FROM feedbacks WHERE id=:id");
+            $stmt = $conn->prepare("SELECT * FROM feedbacks WHERE id=:id");
             $stmt->bindParam(":id", $id);
 
             if ($stmt->rowCount()) {
@@ -162,7 +162,7 @@ class UserFeedback implements PesaCrud
 
         try {
 
-            $stmt = $conn->query("SELECT * FROM feedbacks WHERE approved=1");
+            $stmt = $conn->prepare("SELECT * FROM feedbacks WHERE approved=1");
             $stmt->execute();
 
             if ($stmt->rowCount()) {
@@ -186,7 +186,7 @@ class UserFeedback implements PesaCrud
         global $conn;
 
         try {
-            $stmt = $conn->query("UPDATE feedbacks SET approved=1 WHERE id=:id");
+            $stmt = $conn->prepare("UPDATE feedbacks SET approved=1 WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
@@ -208,7 +208,7 @@ class UserFeedback implements PesaCrud
         global $conn;
 
         try {
-            $stmt = $conn->query("UPDATE feedbacks SET approved=0 WHERE id=:id");
+            $stmt = $conn->prepare("UPDATE feedbacks SET approved=0 WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
             return true;
