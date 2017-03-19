@@ -7,10 +7,13 @@
  */
 
 require_once 'interface.crud.php';
+require 'trait.query.php';
 require_once __DIR__.'/../db/class.db.php';
+
 
 class Payment implements PesaCrud
 {
+    use ComplexQuery;
 
     private $userId;
     private $paypalEmail;
@@ -278,3 +281,4 @@ class Payment implements PesaCrud
     }
 
 }
+
