@@ -269,7 +269,7 @@ require_once __DIR__ . '/../models/class.limits.php';
                         $('#rates_feedback')
                             .removeClass('alert alert-success')
                             .addClass('alert alert-danger')
-                            .text("Update failed try again later");
+                            .text("Error failed add new rate try again later");
                         setTimeout(function () {
                             $('#RatesModal').modal('hide');
                             window.location.reload()
@@ -334,44 +334,6 @@ require_once __DIR__ . '/../models/class.limits.php';
             }
         )
     }
-
-function performDelete(id) {
-    $.ajax(
-        {
-            type: 'POST',
-            url: url,
-            data: {'id': id },
-            dataType: 'json',
-            success: function (response) {
-                console.log(response);
-                if (response.statusCode == 200) {
-                    $('#confirm_feedback')
-                        .removeClass('alert alert-danger')
-                        .addClass('alert alert-success')
-                        .text(response.message);
-                    setTimeout(function () {
-                        $('#ConfirmModal').modal('hide');
-                        window.location.reload()
-
-                    }, 1000)
-                }
-                else if (response.statusCode == 500) {
-                    $('#confirm_feedback')
-                        .removeClass('alert alert-success')
-                        .addClass('alert alert-danger')
-                        .text("Error occurred rate not deleted try again later");
-                    setTimeout(function () {
-                        $('#ConfirmModal').modal('hide');
-                        window.location.reload()
-
-                    }, 1000);
-                }
-
-            }
-        }
-    )
-}
-
 
     function confirmDeleteRate(id) {
         $('#ConfirmModal').modal('show');
