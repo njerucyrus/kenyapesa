@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="04cdb153-0414-407e-9b0d-0a2810ac7644" name="Default" comment="" />
+=======
+    <list default="true" id="04cdb153-0414-407e-9b0d-0a2810ac7644" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/trait.mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/class.payment.php" afterPath="$PROJECT_DIR$/models/class.payment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/class.subscription.php" afterPath="$PROJECT_DIR$/models/class.subscription.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/trait.query.php" afterPath="$PROJECT_DIR$/models/trait.query.php" />
+    </list>
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,32 +71,59 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="testimonial.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/testimonial.inc.php">
+=======
+      <file leaf-file-name="calc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/calc.php">
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="125" column="35" lean-forward="false" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trait.query.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/trait.query.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
-                <element signature="e#566#603#0#PHP" expanded="true" />
+                <element signature="e#6#89#0#PHP" expanded="true" />
+                <marker date="1489929680809" expanded="true" signature="1234:1267" ph="SELECT ${$fi... ${$table}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base.php">
+      <file leaf-file-name="class.subscription.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/class.subscription.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="250">
               <caret line="155" column="60" lean-forward="false" selection-start-line="155" selection-start-column="60" selection-end-line="155" selection-end-column="60" />
               <folding>
                 <marker date="1489928934353" expanded="true" signature="469:622" ph="..." />
                 <marker date="1489928934353" expanded="true" signature="562:590" ph="..." />
                 <marker date="1489928934353" expanded="false" signature="696:702" ph=" " />
+=======
+            <state relative-caret-position="-2500">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <marker date="1489928897777" expanded="true" signature="1032:1090" ph="INSERT INTO subscription... " />
+                <marker date="1489928897777" expanded="true" signature="1712:1743" ph="DELETE FROM " />
+                <marker date="1489928897777" expanded="true" signature="2238:2277" ph="SELECT * FRO... subscription" />
+                <marker date="1489928897777" expanded="true" signature="2878:2912" ph="SELECT * FRO... subscription" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="navbar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/navbar.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,20 +136,32 @@
       </file>
       <file leaf-file-name="about.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/about.inc.php">
+=======
+      <file leaf-file-name="class.payment.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/class.payment.php">
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="22" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="517">
+              <caret line="288" column="34" lean-forward="false" selection-start-line="288" selection-start-column="34" selection-end-line="288" selection-end-column="34" />
+              <folding>
+                <marker date="1489929715029" expanded="true" signature="2622:2843" ph="INSERT INTO payments... " />
+                <marker date="1489929715029" expanded="true" signature="3836:3941" ph="UPDATE payme... " />
+                <marker date="1489929715029" expanded="true" signature="4465:4498" ph="DELETE FROM " />
+                <marker date="1489929715029" expanded="true" signature="5018:5074" ph="SELECT * FRO... payments" />
+                <marker date="1489929715029" expanded="true" signature="5697:5742" ph="SELECT * FRO... payments" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/style.css">
+      <file leaf-file-name="trait.mail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/trait.mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22950">
-              <caret line="1350" column="44" lean-forward="false" selection-start-line="1350" selection-start-column="44" selection-end-line="1350" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="154">
+              <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+              <folding>
+                <marker date="1489929029841" expanded="true" signature="361:399" ph="SELECT email... subscription" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,7 +201,6 @@
         <option value="$PROJECT_DIR$/testimonial.inc.php" />
         <option value="$PROJECT_DIR$/footer.inc.php" />
         <option value="$PROJECT_DIR$/models/user.php" />
-        <option value="$PROJECT_DIR$/models/class.subscription.php" />
         <option value="$PROJECT_DIR$/views/subscribe.php" />
         <option value="$PROJECT_DIR$/views/footer.inc.php" />
         <option value="$PROJECT_DIR$/views/rates.php" />
@@ -161,8 +209,16 @@
         <option value="$PROJECT_DIR$/views/convert.php" />
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
         <option value="$PROJECT_DIR$/views/testimonial.inc.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/base.php" />
         <option value="$PROJECT_DIR$/admin/navbar.php" />
+=======
+        <option value="$PROJECT_DIR$/models/trait_mail.php" />
+        <option value="$PROJECT_DIR$/models/class.subscription.php" />
+        <option value="$PROJECT_DIR$/models/trait.mail.php" />
+        <option value="$PROJECT_DIR$/models/trait.query.php" />
+        <option value="$PROJECT_DIR$/models/class.payment.php" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
       </list>
     </option>
   </component>
@@ -174,10 +230,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -197,6 +253,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+      <pane id="Scope" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -205,12 +266,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.library.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <option name="myItemId" value="kenyapesa" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+<<<<<<< HEAD
+=======
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kenyapesa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PHP Runtime" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+              <option name="myItemId" value="kenyapesa" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -222,7 +295,12 @@
               <option name="myItemId" value="kenyapesa" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -238,6 +316,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="SearchEverywhereHistoryKey" value="main_teastimonial_slider&#9;null&#9;null" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
@@ -315,8 +394,13 @@
       <workItem from="1489770716874" duration="12111000" />
       <workItem from="1489817951972" duration="14474000" />
       <workItem from="1489854854381" duration="15133000" />
+<<<<<<< HEAD
       <workItem from="1489908129072" duration="184000" />
       <workItem from="1489926910910" duration="1495000" />
+=======
+      <workItem from="1489908129072" duration="40000" />
+      <workItem from="1489922898922" duration="4564000" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
     </task>
     <task id="LOCAL-00001" summary="edited ui">
       <created>1489731522400</created>
@@ -385,19 +469,23 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="54969000" />
+=======
+    <option name="totallyTimeSpent" value="57894000" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29575402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30071598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11346999" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3264095" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02923077" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -451,19 +539,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/base.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2091">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <marker date="1489928934353" expanded="true" signature="469:622" ph="..." />
             <marker date="1489928934353" expanded="true" signature="562:590" ph="..." />
             <marker date="1489928934353" expanded="false" signature="696:702" ph=" " />
+=======
+        <state relative-caret-position="2583">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <marker date="1489908836507" expanded="true" signature="469:622" ph="..." />
+            <marker date="1489908836507" expanded="true" signature="562:590" ph="..." />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/about.inc.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="221">
+=======
+        <state relative-caret-position="273">
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="22" selection-end-column="38" />
           <folding />
         </state>
@@ -471,7 +571,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="22950">
+=======
+        <state relative-caret-position="28350">
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           <caret line="1350" column="44" lean-forward="false" selection-start-line="1350" selection-start-column="44" selection-end-line="1350" selection-end-column="44" />
           <folding />
         </state>
@@ -492,9 +596,14 @@
         <state relative-caret-position="2091">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1489928934353" expanded="true" signature="469:622" ph="..." />
             <marker date="1489928934353" expanded="true" signature="562:590" ph="..." />
             <marker date="1489928934353" expanded="false" signature="696:702" ph=" " />
+=======
+            <marker date="1489908836507" expanded="true" signature="469:622" ph="..." />
+            <marker date="1489908836507" expanded="true" signature="562:590" ph="..." />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           </folding>
         </state>
       </provider>
@@ -558,17 +667,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c732add-e463-44f1-b957-3f616a4e1584/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c732add-e463-44f1-b957-3f616a4e1584/console.sql" />
     <entry file="file://$PROJECT_DIR$/models/class.feedback.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+<<<<<<< HEAD
           <folding>
             <marker date="1489908283022" expanded="true" signature="1222:1337" ph="INSERT INTO feedbacks... " />
             <marker date="1489908283022" expanded="true" signature="1924:1968" ph="UPDATE feedb... " />
@@ -578,6 +682,9 @@
             <marker date="1489908283022" expanded="true" signature="4005:4049" ph="UPDATE feedb... " />
             <marker date="1489908283022" expanded="true" signature="4513:4557" ph="UPDATE feedb... " />
           </folding>
+=======
+          <folding />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
         </state>
       </provider>
     </entry>
@@ -634,6 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="236" column="49" lean-forward="true" selection-start-line="236" selection-start-column="49" selection-end-line="236" selection-end-column="49" />
+<<<<<<< HEAD
           <folding>
             <marker date="1489908283170" expanded="true" signature="3385:3855" ph="INSERT INTO users... " />
             <marker date="1489908283170" expanded="true" signature="5216:5596" ph="UPDATE users... " />
@@ -650,6 +758,9 @@
             <marker date="1489908283170" expanded="true" signature="9678:9725" ph="UPDATE users... " />
             <marker date="1489908283170" expanded="true" signature="10262:10308" ph="UPDATE users... " />
           </folding>
+=======
+          <folding />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
         </state>
       </provider>
     </entry>
@@ -657,13 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="74" column="99" lean-forward="false" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/class.subscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251">
-          <caret line="108" column="35" lean-forward="false" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -685,6 +789,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
           <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
         </state>
       </provider>
     </entry>
@@ -713,6 +821,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="205" column="68" lean-forward="false" selection-start-line="205" selection-start-column="68" selection-end-line="205" selection-end-column="68" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
         </state>
       </provider>
     </entry>
@@ -732,7 +844,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22950">
+        <state relative-caret-position="21">
           <caret line="1350" column="44" lean-forward="false" selection-start-line="1350" selection-start-column="44" selection-end-line="1350" selection-end-column="44" />
           <folding />
         </state>
@@ -748,18 +860,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/testimonial.inc.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="17">
           <caret line="125" column="35" lean-forward="false" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
           <folding>
             <element signature="e#566#603#0#PHP" expanded="true" />
+=======
+        <state relative-caret-position="2583">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <marker date="1489908836507" expanded="true" signature="469:622" ph="..." />
+            <marker date="1489908836507" expanded="true" signature="562:590" ph="..." />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/base.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="250">
           <caret line="155" column="60" lean-forward="false" selection-start-line="155" selection-start-column="60" selection-end-line="155" selection-end-column="60" />
+=======
+        <state relative-caret-position="2751">
+          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           <folding>
             <marker date="1489928934353" expanded="true" signature="469:622" ph="..." />
             <marker date="1489928934353" expanded="true" signature="562:590" ph="..." />
@@ -768,13 +893,71 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/admin/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="70" lean-forward="false" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+=======
+    <entry file="file://$PROJECT_DIR$/views/calc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/models/trait.mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+          <folding>
+            <marker date="1489929029841" expanded="true" signature="361:399" ph="SELECT email... subscription" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/class.subscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2500">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1489928897777" expanded="true" signature="1032:1090" ph="INSERT INTO subscription... " />
+            <marker date="1489928897777" expanded="true" signature="1712:1743" ph="DELETE FROM " />
+            <marker date="1489928897777" expanded="true" signature="2238:2277" ph="SELECT * FRO... subscription" />
+            <marker date="1489928897777" expanded="true" signature="2878:2912" ph="SELECT * FRO... subscription" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/trait.query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+            <marker date="1489929680809" expanded="true" signature="1234:1267" ph="SELECT ${$fi... ${$table}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/class.payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="288" column="34" lean-forward="false" selection-start-line="288" selection-start-column="34" selection-end-line="288" selection-end-column="34" />
+          <folding>
+            <marker date="1489929715029" expanded="true" signature="2622:2843" ph="INSERT INTO payments... " />
+            <marker date="1489929715029" expanded="true" signature="3836:3941" ph="UPDATE payme... " />
+            <marker date="1489929715029" expanded="true" signature="4465:4498" ph="DELETE FROM " />
+            <marker date="1489929715029" expanded="true" signature="5018:5074" ph="SELECT * FRO... payments" />
+            <marker date="1489929715029" expanded="true" signature="5697:5742" ph="SELECT * FRO... payments" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 905b3119d3ca03b1d48389e6353a611edbcfdd3f
   </component>
 </project>

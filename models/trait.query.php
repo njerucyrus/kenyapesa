@@ -21,14 +21,23 @@ trait ComplexQuery {
     public static function customFilter($table, $fields, $options){
         global $conn;
 
+
+
         if(is_array($fields) and is_array($options)){
+
+
             $new_options_array = array();
             foreach ($options as $key=>$value){
                 $option= $key."='".$value."'";
                 array_push($new_options_array, $option);
             }
+            if(empty($options)){
+                $sql_condition_string = 1;
+            }
+            else {
 
-            $sql_condition_string = rtrim(implode(' AND ', $new_options_array), ',');
+                $sql_condition_string = rtrim(implode(' AND ', $new_options_array), ',');
+            }
             if (empty($fields)){
                 $fields = '*';
             }
@@ -58,5 +67,11 @@ trait ComplexQuery {
             }
 
         }
+        else{
+            return null;
+        }
+
     }
+
 }
+
