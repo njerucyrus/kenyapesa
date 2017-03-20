@@ -112,7 +112,7 @@ class Limit implements PesaCrud {
             $maxLimit = $this->getMaxLimit();
             $exchangeRate = $this->getExchangeRate();
 
-            $stmt = $conn->prepare("UPDATE limits SET min_limit=:min_limit, max_limit=:min_limit, exchange_rate=:exchange_rate
+            $stmt = $conn->prepare("UPDATE limits SET min_limit=:min_limit, max_limit=:max_limit, exchange_rate=:exchange_rate
                                   WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->bindParam(":min_limit", $minLimit);
