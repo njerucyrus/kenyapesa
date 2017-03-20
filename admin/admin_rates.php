@@ -19,33 +19,54 @@ require_once __DIR__ . '/../models/class.limits.php';
 </div>
 <div class="container container-fluid">
     <div class="row">
-        <div class="col col-md-4">
-            <form class="">
-                <div class="form-group" role="form">
-                    <label for="min_dollar">Minimum Dollar Limit </label>
-                    <input type="number" class="form-control" id="min_dollar" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="max_dollar">Maximum Dollar Limit </label>
-                    <input type="number" class="form-control" id="max_dollar" disabled>
-                </div>
+        <div class="col col-md-8 col-md-offset-2">
+            <div class="table-responsive">
+                <p style="font-size: 1.2em; color:#ff7200">Limits</p>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Minimum Dollar Limit</td>
+                        <td>Maximum Dollar Limit</td>
+                        <td>Dollar Exchange Rate</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
 
-                <div class="form-group">
-                    <label for="max_dollar">Dollar Exchange Rate </label>
-                    <input type="number" class="form-control" id="max_dollar" disabled>
-                </div>
-                <div class="" style="margin-top: 10px;">
-                    <button id="btn_limits" type="button" class=" btn btn-primary">Edit</button>
-                </div>
+                    $limits = Limit::all();
+                    if (!is_null($limits)) {
+                        while ($limit = $limits->fetch(PDO::FETCH_ASSOC)) {
+                            ?>
+                            <tr>
+                                <td><?php echo $limit['min_limit'] ?> $</td>
+                                <td><?php echo $limit['max_limit'] ?> $</td>
+                                <td style="font-weight: bold;">1 $ @ KSH <?php echo $limit['exchange_rate'] ?></td>
+                                <td>
+                                    <button class="btn btn-xs btn-primary"
+                                            onclick="updateLimits(
+                                                    '<?php echo $limit['id'];?>',
+                                                    '<?php echo $limit['min_limit'];?>',
+                                                    '<?php echo $limit['max_limit'];?>',
+                                                    '<?php echo $limit['exchange_rate'];?>')">Edit
+                                    </button>
+                                </td>
 
-            </form>
+                            </tr>
+                            <?php
+                        }
+                    }
+
+                    ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="col col-md-8">
+        <div class="col col-md-8 col-md-offset-2">
 
             <div class="table-responsive" style="margin-top: 10px;">
                 <div class="col-md-12" style="margin-bottom: 10px;">
-                    <p style="font-size: 1.2em; ">Charges Rate</p>
+                    <p style="font-size: 1.2em; color:#ff7200;">Charges Rate</p>
                     <button class="btn btn-warning pull-right" onclick="showCreateModal()">Add New Rate</button>
                 </div>
                 <table class="table">
@@ -79,7 +100,8 @@ require_once __DIR__ . '/../models/class.limits.php';
                                                            )">
                                         Edit
                                     </a>
-                                    <a href="#" class="btn btn-xs btn-danger" onclick="confirmDeleteRate('<?php echo $rate['id'] ?>')">Delete</a></td>
+                                    <a href="#" class="btn btn-xs btn-danger"
+                                       onclick="confirmDeleteRate('<?php echo $rate['id'] ?>')">Delete</a></td>
                             </tr>
 
 
@@ -176,6 +198,48 @@ require_once __DIR__ . '/../models/class.limits.php';
     </div>
 </div>
 
+<!--Edit Limits -->
+
+<!--Limits Modal-->
+<div id="LimitsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Limits & Exchange Rate</h4>
+            </div>
+            <div class="modal-body">
+                <div id="limit_feedback"></div>
+                <form>
+                    <div class="form-group">
+                        <label for="min_limit">Minimum Dollar Limit</label>
+                        <input type="number" class="form-control" id="min_limit" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="max_limit">Maximum Dollar Limit</label>
+                        <input type="number" class="form-control" id="max_limit" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exchange_rate">Dollar Exchange rate</label>
+                        <input type="number" class="form-control" id="exchange_rate" required>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save" type="button" class="btn btn-primary">
+                    Save Changes
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 <?php include 'js.php'; ?>
@@ -185,10 +249,10 @@ require_once __DIR__ . '/../models/class.limits.php';
         e.preventDefault;
         $('#btn_charges').on('click', function () {
             var option = $('#option').val();
-            if (option == 'addNew'){
+            if (option == 'addNew') {
                 saveNewRate();
             }
-            else if (option == 'update'){
+            else if (option == 'update') {
                 editChargesRate();
             }
 
@@ -350,7 +414,7 @@ require_once __DIR__ . '/../models/class.limits.php';
                 {
                     type: 'POST',
                     url: url,
-                    data: {'option': 'delete_rates', 'id': id },
+                    data: {'option': 'delete_rates', 'id': id},
                     dataType: 'json',
                     success: function (response) {
                         console.log(response);
@@ -381,8 +445,70 @@ require_once __DIR__ . '/../models/class.limits.php';
                 }
             )
         })
+    }
+
+    function getLimitModalData() {
+        return {
+
+            min_limit: $('#min_limit').val(),
+            max_limit: $('#max_limit').val(),
+            exchange_rate: $('#exchange_rate').val()
+        };
 
     }
+    function updateLimits(id, min, max, exchangeRate) {
+        $('#LimitsModal').modal('show');
+        $('#min_limit').val(min);
+        $('#max_limit').val(max);
+        $('#exchange_rate').val(exchangeRate);
+        var data = getLimitModalData();
+        data['id'] = id;
+        data['option'] = 'update_limits'
+
+
+        $('#btn-save').on('click', function () {
+        $.ajax(
+            {
+                type: 'POST',
+                url: url,
+                data: data,
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    if (response.statusCode == 200) {
+                        $('#limit_feedback')
+                            .removeClass('alert alert-danger')
+                            .addClass('alert alert-success')
+                            .text(response.message);
+                        setTimeout(function () {
+                            $('#LimitsModal').modal('hide');
+                            window.location.reload()
+
+                        }, 1000)
+                    }
+                    else if (response.statusCode == 500) {
+                        $('#limit_feedback')
+                            .removeClass('alert alert-success')
+                            .addClass('alert alert-danger')
+                            .text("Error occurred rate not updated");
+                        setTimeout(function () {
+                            $('#LimitsModal').modal('hide');
+                            window.location.reload()
+
+                        }, 1000);
+                    }
+
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+
+            }
+        );
+        })
+    }
+
+
 
 </script>
 

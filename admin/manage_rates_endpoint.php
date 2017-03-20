@@ -116,7 +116,44 @@ function deleteRate()
 function updateLimit()
 {
 
+    if (isset($_POST['id']) and
+        isset($_POST['min_limit']) and
+        isset($_POST['max_limit']) and
+        isset($_POST['exchange_rate'])
+    ) {
 
+        $id = $_POST['id'];
+        $min_limit = $_POST['min_limit'];
+        $max_limit = $_POST['max_limit'];
+        $exchange_rate = $_POST['exchange_rate'];
+
+        $limit = new Limit();
+        $limit->setMinLimit($min_limit);
+        $limit->setMaxLimit($max_limit);
+        $limit->setExchangeRate($exchange_rate);
+
+        $updated = $limit->update($id);
+
+        if($updated) {
+            print_r(json_encode(array(
+                "statusCode" => 200,
+                "message" => "Limits Updated successfully"
+            )));
+        }
+        else{
+            print_r(json_encode(array(
+                "statusCode" => 500,
+                "message" => "error occurred"
+            )));
+        }
+
+    }
+    else{
+        print_r(json_encode(array(
+            "statusCode" => 500,
+            "message" => "data not set"
+        )));
+    }
 }
 
 
