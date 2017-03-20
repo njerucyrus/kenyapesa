@@ -25,12 +25,9 @@
             <li><a href="admin_rates.php">Rates & Limits</a></li>
             <li><a href="admin_reviews.php">Reviews</a></li>
             <li><a href="https://uhchat.net/admin/">Live Chat</a></li>
-<<<<<<< HEAD
-
-=======
             <li><a href="#">Reviews</a></li>
             <li><a href="subscription.php">Subscription</a></li>
->>>>>>> 41fcbfb0c231eeb11ca947554d4255e6dd9547f4
+
 
 <!--            <li class="dropdown">-->
 <!--                <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Farm Records-->
