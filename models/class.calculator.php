@@ -9,7 +9,7 @@ require_once 'class.rate.php';
 require_once 'class.limits.php';
 class PesaCalc extends Rate {
 
-    public function calculate($userDollar){
+    public static function calculate($userDollar){
        $rate = Rate::getRate($userDollar);
        $exchange_rate = Limit::getCurrentExchangeRate();
 
