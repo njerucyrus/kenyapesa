@@ -62,14 +62,9 @@ class Paypal_IPN
             CURLOPT_CONNECTTIMEOUT => 30,
             CURLOPT_SSL_VERIFYHOST => 2,
             CURLOPT_FORBID_REUSE => 1,
-
-
+            CURLOPT_HTTPHEADER => array('Connection: Close', 'User-Agent: PremierePesa')
         ));
         $result = curl_exec($ch);
-//        $fh = fopen('result.txt', 'w');
-//        fwrite($fh, $result.'--'.$req);
-//        fclose($fh);
-//        curl_close($ch);
 
         $tokens = explode("\r\n\r\n", trim($result));
         $result = trim(end($tokens));
@@ -90,6 +85,7 @@ class Paypal_IPN
             $options = array(
                 "transaction_id"=>$txn_id
             );
+
             $prevPayment = Payment::customFilter($table, $fields, $options);
             if(!is_null($prevPayment)){
                 exit();
@@ -122,7 +118,8 @@ class Paypal_IPN
             }
         }
 
-
+        // close curl
+       curl_close($ch);
 
     }
 }
