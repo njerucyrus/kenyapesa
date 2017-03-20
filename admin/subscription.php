@@ -31,7 +31,7 @@ require_once __DIR__ . '/../models/class.subscription.php';
 
 <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-        
+
         <div class="container container-fluid">
             <div class="row">
                 <div class="col col-md-8 col-md-offset-2" style="margin-top: 100px; margin-bottom: 100px;">
