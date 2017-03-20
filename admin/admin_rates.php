@@ -55,6 +55,13 @@ require_once __DIR__ . '/../models/class.limits.php';
                             <?php
                         }
                     }
+                    else{
+                        ?>
+                        <button class="btn btn-warning pull-right" style="margin-right: 25px;" onclick="createNewLimit()">
+                            Set Limits & Dollar Exchange Rate
+                        </button>
+                        <?php
+                    }
 
                     ?>
                     </tbody>
@@ -341,6 +348,9 @@ require_once __DIR__ . '/../models/class.limits.php';
                         }, 1000);
                     }
 
+                },
+                error:function (error) {
+                    console.log(error);
                 }
             }
         )
@@ -394,6 +404,9 @@ require_once __DIR__ . '/../models/class.limits.php';
                         }, 1000);
                     }
 
+                },
+                error:function (error) {
+                    console.log(error);
                 }
             }
         )
@@ -441,6 +454,9 @@ require_once __DIR__ . '/../models/class.limits.php';
                             }, 1000);
                         }
 
+                    },
+                    error:function (error) {
+                        console.log(error);
                     }
                 }
             )
@@ -461,13 +477,14 @@ require_once __DIR__ . '/../models/class.limits.php';
         $('#min_limit').val(min);
         $('#max_limit').val(max);
         $('#exchange_rate').val(exchangeRate);
-        var data = getLimitModalData();
-        data['id'] = id;
-        data['option'] = 'update_limits'
 
 
         $('#btn-save').on('click', function () {
-        $.ajax(
+            var data = getLimitModalData();
+            data['id'] = id;
+            data['option'] = 'update_limits';
+
+            $.ajax(
             {
                 type: 'POST',
                 url: url,
@@ -506,6 +523,56 @@ require_once __DIR__ . '/../models/class.limits.php';
             }
         );
         })
+    }
+
+
+    function createNewLimit() {
+        $('#LimitsModal').modal('show');
+
+
+        $('#btn-save').on('click', function () {
+            var data = getLimitModalData();
+            data['option'] = 'create_limit';
+            console.log("data create", data);
+        $.ajax(
+            {
+                type: 'POST',
+                url: url,
+                data: data,
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    if (response.statusCode == 200) {
+                        $('#limit_feedback')
+                            .removeClass('alert alert-danger')
+                            .addClass('alert alert-success')
+                            .text(response.message);
+                        setTimeout(function () {
+                            $('#LimitsModal').modal('hide');
+                            window.location.reload()
+
+                        }, 1000)
+                    }
+                    else if (response.statusCode == 500) {
+                        $('#limit_feedback')
+                            .removeClass('alert alert-success')
+                            .addClass('alert alert-danger')
+                            .text("Error occurred rate not updated");
+                        setTimeout(function () {
+                            $('#LimitsModal').modal('hide');
+                            window.location.reload()
+
+                        }, 1000);
+                    }
+
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+
+            }
+        )
+        });
     }
 
 

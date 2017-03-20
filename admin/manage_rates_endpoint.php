@@ -22,6 +22,9 @@ switch ($option) {
     case 'delete_rates':
         deleteRate();
         break;
+    case 'create_limit':
+        createLimit();
+        break;
 
     case 'update_limits':
         updateLimit();
@@ -37,7 +40,7 @@ function createRate()
     ) {
         $min = $_POST['min'];
         $max = $_POST['max'];
-        $fixed= $_POST['fixed'];
+        $fixed = $_POST['fixed'];
         $percentage = $_POST['percentage'];
 
         //create instance of rate class
@@ -51,13 +54,23 @@ function createRate()
         //save the new reate to the database by calling create method
         $created = $rate->create();
 
-        if($created){
+        if ($created) {
             print_r(json_encode(array(
                 "statusCode" => 200,
                 "message" => "Rates saved successfully"
             )));
+        } else {
+            print_r(json_encode(array(
+                "statusCode" => 500,
+                "message" => "Error occurred"
+            )));
         }
 
+    } else {
+        print_r(json_encode(array(
+            "statusCode" => 500,
+            "message" => "data not set"
+        )));
     }
 }
 
@@ -72,7 +85,7 @@ function updateRate()
         $id = $_POST['id'];
         $min = $_POST['min'];
         $max = $_POST['max'];
-        $fixed= $_POST['fixed'];
+        $fixed = $_POST['fixed'];
         $percentage = $_POST['percentage'];
 
         //create instance of rate class
@@ -86,31 +99,91 @@ function updateRate()
         //update the values in the database by calling public method update
         $updated = $rate->update($id);
 
-        if($updated){
+        if ($updated) {
             print_r(json_encode(array(
                 "statusCode" => 200,
                 "message" => "Rates updated successfully"
             )));
+        } else {
+            print_r(json_encode(array(
+                "statusCode" => 500,
+                "message" => "error occurred"
+            )));
         }
 
+
+    } else {
+        print_r(json_encode(array(
+            "statusCode" => 500,
+            "message" => "data not set"
+        )));
     }
 }
 
 function deleteRate()
 {
-    if(isset($_POST['id'])){
+    if (isset($_POST['id'])) {
         $id = $_POST['id'];
         $deleted = Rate::delete($id);
 
-        if($deleted){
+        if ($deleted) {
             print_r(json_encode(array(
                 "statusCode" => 200,
                 "message" => "Rate Deleted successfully"
             )));
+        } else {
+            print_r(json_encode(array(
+                "statusCode" => 500,
+                "message" => "error occurred"
+            )));
         }
 
+    } else {
+        print_r(json_encode(array(
+            "statusCode" => 500,
+            "message" => "data not set"
+        )));
     }
 
+}
+
+
+function createLimit()
+{
+    if (isset($_POST['min_limit']) and
+        isset($_POST['max_limit']) and
+        isset($_POST['exchange_rate'])
+    ) {
+
+        $min_limit = $_POST['min_limit'];
+        $max_limit = $_POST['max_limit'];
+        $exchange_rate = $_POST['exchange_rate'];
+
+        $limit = new Limit();
+        $limit->setMinLimit($min_limit);
+        $limit->setMaxLimit($max_limit);
+        $limit->setExchangeRate($exchange_rate);
+
+        $created = $limit->create();
+
+        if ($created) {
+            print_r(json_encode(array(
+                "statusCode" => 200,
+                "message" => "Limits saved successfully"
+            )));
+        } else {
+            print_r(json_encode(array(
+                "statusCode" => 500,
+                "message" => "error occurred"
+            )));
+        }
+
+    } else {
+        print_r(json_encode(array(
+            "statusCode" => 500,
+            "message" => "data not set"
+        )));
+    }
 }
 
 function updateLimit()
@@ -134,21 +207,19 @@ function updateLimit()
 
         $updated = $limit->update($id);
 
-        if($updated) {
+        if ($updated) {
             print_r(json_encode(array(
                 "statusCode" => 200,
                 "message" => "Limits Updated successfully"
             )));
-        }
-        else{
+        } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
                 "message" => "error occurred"
             )));
         }
 
-    }
-    else{
+    } else {
         print_r(json_encode(array(
             "statusCode" => 500,
             "message" => "data not set"
