@@ -8,13 +8,13 @@
 
 require_once 'interface.crud.php';
 require 'trait.query.php';
-require_once __DIR__.'/../db/class.db.php';
+require_once 'user.php';
+require_once __DIR__ . '/../db/class.db.php';
 
 
 class Payment implements PesaCrud
 {
     use ComplexQuery;
-
     private $userId;
     private $paypalEmail;
     private $transactionId;
@@ -173,13 +173,14 @@ class Payment implements PesaCrud
 
     }
 
+
     /**
      * @param $transactionId
      * @return bool
      * update the transaction status
      * after payment has been completed successfully
      */
-    public  function update($transactionId)
+    public function update($transactionId)
     {
         global $conn;
         $status = $this->getStatus();
@@ -223,6 +224,7 @@ class Payment implements PesaCrud
 
     }
 
+
     /**
      * @param $id
      * @return null|PDOStatement
@@ -233,14 +235,13 @@ class Payment implements PesaCrud
 
         try {
 
-            $stmt  = $conn->prepare("SELECT * FROM payments WHERE id=:id AND status='success'");
+            $stmt = $conn->prepare("SELECT * FROM payments WHERE id=:id AND status='success'");
 
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            if ($stmt->rowCount() > 0 ) {
+            if ($stmt->rowCount() > 0) {
                 return $stmt;
-            }
-            else{
+            } else {
                 return null;
             }
 
@@ -262,7 +263,7 @@ class Payment implements PesaCrud
         global $conn;
 
         try {
-            $stmt = $conn->prepare("SELECT * FROM payments WHERE status='success'");
+            $stmt = $conn->prepare("SELECT * FROM payments WHERE `status`='Completed'");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -280,4 +281,72 @@ class Payment implements PesaCrud
         }
     }
 
+    /**
+     * @param $paypalEmail
+     * @param $amount
+     * @return array
+     * check if the user meets all the conditions necessary before making
+     * payment
+     * if the user meets our requirement the function returns an empty
+     * otherwise the function will return an array of errors.
+     * we can user count() function provided by php to display
+     * the specific error messages by getting the specified index
+     * eg if count() returns 2 then we read the error at  index 0 And
+     * index 1 otherwise only read the error at index 0
+     */
+
+    public static function authenticate_payment($paypalEmail, $amount)
+    {
+        global $conn;
+        try {
+            $today = date('Y-m-d');
+            $query_string = "SELECT id FROM payments WHERE paypal_email='{$paypalEmail}' AND DATE(`date`)='{$today}' AND `status`='Completed'";
+            $stmt = $conn->prepare($query_string);
+
+            $stmt->execute();
+
+            $transactionCount = $stmt->rowCount();
+
+            $userLimitsArray = User::getUserLimits($paypalEmail);
+            if (!empty($userLimitsArray)) {
+                $amountLimit = (float)$userLimitsArray['amt_limit'];
+                $transactionLimit = (float)$userLimitsArray['txn_limit'];
+
+                $errors = array();
+                if ((float)$amount > $amountLimit) {
+                    $message = "The amount provided exceeds the your Limit,
+                    to upgrade your transaction amount limit";
+
+                    array_push($errors, array(
+                        "amt_limit_error" => $message
+                    ));
+                }
+                if ((float)$transactionCount > $transactionLimit) {
+                    $message = "You have exceeded number of times you can transact today! 
+                    please try again tomorrow: COUNT IS.".$transactionCount."YOUR LIMIT IS".$transactionLimit;
+                    array_push($errors, array(
+                        "txn_limit_error" => $message
+                    ));
+                }
+
+                return $errors;
+
+            } else {
+                return array("error" => "user limits not found");
+            }
+
+
+        } catch (PDOException $e) {
+
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+            return array("exceptionError" => $e->getMessage());
+        }
+
+
+    }
+
 }
+
