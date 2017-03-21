@@ -8,7 +8,9 @@
 
 require_once 'interface.crud.php';
 require 'trait.query.php';
+require_once 'user.php';
 require_once __DIR__.'/../db/class.db.php';
+
 
 
 class Payment implements PesaCrud
@@ -281,4 +283,35 @@ class Payment implements PesaCrud
         }
     }
 
+    /**
+     * @param $paypalEmail
+     * @param $amount
+     * check if the user meets all the conditions necessary before making
+     * payment
+     */
+
+    public static function authenticate_payment($paypalEmail, $amount)
+    {
+        global $conn;
+        try {
+            $today = date('Y-m-d');
+            $sql1 = "SELECT id FROM payments WHERE paypal_email='{$paypalEmail}' AND DATE(`date`)='{$today}'";
+            $stmt = $conn->prepare($sql1);
+            $stmt->execute();
+            $transactionCount = $stmt->rowCount();
+            print_r($transactionCount);
+
+        } catch (PDOException $e) {
+
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+        }
+
+
+    }
+
 }
+
+print_r(Payment::authenticate_payment('buyer@paypalsandbox.com', 2));

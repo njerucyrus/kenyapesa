@@ -453,5 +453,33 @@ class User extends Auth implements PesaCrud
             return false;
         }
     }
+
+    /**
+     * @param $paypalEmail
+     * @return array|null
+     */
+    public static function getUserLimits($paypalEmail){
+        global $conn;
+        try {
+            $stmt = $conn->prepare("SELECT transaction_limit,amount_limit FROM users WHERE paypal_email=:paypal_email");
+
+            $stmt->bindParam(":paypal_email", $paypalEmail);
+            $stmt->execute();
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return array(
+                "txn_limit"=>$row['transaction_limit'],
+                "amt_limit"=>$row['amount_limit']
+            );
+
+        } catch (PDOException $e){
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+            return null;
+        }
+
+    }
 }
 
