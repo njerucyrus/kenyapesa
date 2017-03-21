@@ -14,7 +14,6 @@ require_once __DIR__.'/../db/class.db.php';
 class Payment implements PesaCrud
 {
     use ComplexQuery;
-
     private $userId;
     private $paypalEmail;
     private $transactionId;
@@ -173,6 +172,7 @@ class Payment implements PesaCrud
 
     }
 
+
     /**
      * @param $transactionId
      * @return bool
@@ -222,6 +222,7 @@ class Payment implements PesaCrud
         }
 
     }
+
 
     /**
      * @param $id
