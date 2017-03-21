@@ -162,7 +162,7 @@ class UserFeedback implements PesaCrud
 
         try {
 
-            $stmt = $conn->prepare("SELECT * FROM feedbacks WHERE approved=1");
+            $stmt = $conn->prepare("SELECT * FROM feedbacks WHERE 1");
             $stmt->execute();
 
             if ($stmt->rowCount()) {
