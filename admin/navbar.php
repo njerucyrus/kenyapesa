@@ -24,9 +24,9 @@
             <li><a href="transactions_list.php">Transactions</a></li>
             <li><a href="admin_rates.php">Rates & Limits</a></li>
             <li><a href="admin_reviews.php">Reviews</a></li>
-            <li><a href="https://uhchat.net/admin/">Live Chat</a></li>
-            <li><a href="#">Reviews</a></li>
             <li><a href="subscription.php">Subscription</a></li>
+            <li><a href="https://uhchat.net/admin/">Live Chat</a></li>
+
 
 
 <!--            <li class="dropdown">-->
