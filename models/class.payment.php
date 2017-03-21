@@ -300,9 +300,11 @@ class Payment implements PesaCrud
         global $conn;
         try {
             $today = date('Y-m-d');
-            $sql1 = "SELECT id FROM payments WHERE paypal_email='{$paypalEmail}' AND DATE(`date`)='{$today}'";
-            $stmt = $conn->prepare($sql1);
+            $query_string = "SELECT id FROM payments WHERE paypal_email='{$paypalEmail}' AND DATE(`date`)='{$today}' AND `status`='Completed'";
+            $stmt = $conn->prepare($query_string);
+
             $stmt->execute();
+
             $transactionCount = $stmt->rowCount();
 
             $userLimitsArray = User::getUserLimits($paypalEmail);
