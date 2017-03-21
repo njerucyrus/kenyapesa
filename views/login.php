@@ -28,7 +28,6 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
 
         header("Location: ../base.php");
     } else {
-        unset($_SESSION['username']);
         session_destroy();
         echo "invalid username/password";
     }

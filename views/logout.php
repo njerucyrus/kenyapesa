@@ -10,7 +10,6 @@ session_start();
 
 session_destroy();
 unset($_SESSION['username']);
-unset($_SESSION['transaction_limit']);
-unset($_SESSION['amount_limit']);
 
-header("Location: 'login.php");
+
+header("Location: login.php");

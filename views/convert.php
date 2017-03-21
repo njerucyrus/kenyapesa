@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: hudutech
@@ -35,6 +36,7 @@ include(__DIR__ . '/../models/class.calculator.php');
                         if (amt < min ){
                             $('#prefix_words').text('amount less than allowed minimum of '+min+' dollars');
                             $("#shillings").val(0);
+
                         }
                         else if (amt > max) {
 
@@ -228,13 +230,26 @@ include(__DIR__ . '/../models/class.calculator.php');
 
             <div class="container">
                 <div class="col col-md-6 col-md-offset-3">
-                    <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
-                    <form class="form-group">
+                    <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200; font-weight: bold;">Check the amount of Cash you will receive using our Calculator Below.</h6>
+                    <form class="form-group" action="checkout.php" method="post">
                         <input type="number" onkeyup="checkLimit()" class="form-control" name="dollars" id="dollars" placeholder="Enter Amount in Dollars">
                         <br>
                         <p style="font-size: 1.2em; margin-left: 5px; color:#ff7200; " id="prefix_words">Your MPESA account will receive KES:</p>
-                        <input type="number" class="form-control" id="shillings" disabled>
-                        <input type="submit" value="Checkout" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">
+                        <input type="number" class="form-control" id="shillings" name="shillings" disabled>
+
+                        <?php
+                        if(isset($_SESSION['username'])){
+                            ?>
+                        <input type="submit" value="Checkout Now" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px; font-size: 1em;">
+                        <?php
+                        }
+                        else{
+                        ?>
+                        <a href="login.php" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px; font-size: 1em;">Login to get started</a>
+                        <?php
+                        }
+                        ?>
+
                     </form>
                 </div>
 
@@ -243,8 +258,6 @@ include(__DIR__ . '/../models/class.calculator.php');
         </div>
 
     </div>
-
-
 
 <!--    steps of transactions-->
     <div class="container ">
@@ -513,6 +526,8 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 <script src="../public/assets/js/plugins.js"></script>
 <script src="../public/assets/js/main.js"></script>
+
+
 
 </body>
 </html>
