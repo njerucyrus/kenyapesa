@@ -36,9 +36,13 @@
                                         <div class="separator"></div>
                                     </div>
                                     <ul>
-                                        <li><a href="#services">Services</a></li>
-                                        <li><a href="#contact">Contact Us</a></li>
-                                        <li><a href="#signup">Sign up</a></li>
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#service">Services</a></li>
+                                        <li><a href="#rates">Rates</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#testimonial">Testimonials</a></li>
+                                        <li><a href="#signup">Join</a></li>
+                                        <li><a href="#contact">Contact</a></li>
 
                                     </ul>
                                 </div>
@@ -48,14 +52,12 @@
                                 <div class="single_widget wow fadeIn" data-wow-duration="800ms">
 
                                     <div class="footer_title">
-                                        <h4>ACHIVES</h4>
+                                        <h4>Services</h4>
                                         <div class="separator"></div>
                                     </div>
                                     <ul>
-                                        <li><a href="">January 2015</a></li>
-                                        <li><a href="">February 2015</a></li>
-                                        <li><a href="">March 2015</a></li>
-                                        <li><a href="">April 2015</a></li>
+                                        <li><a href="views/convert.php">Paypal to Mpesa</a></li>
+                                        <li><a href="#">Mpesa to Paypal</a></li>
                                     </ul>
                                 </div>
                             </div>
