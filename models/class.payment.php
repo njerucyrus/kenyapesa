@@ -263,7 +263,7 @@ class Payment implements PesaCrud
         global $conn;
 
         try {
-            $stmt = $conn->prepare("SELECT * FROM payments WHERE status='success'");
+            $stmt = $conn->prepare("SELECT * FROM payments WHERE `status`='Completed'");
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -312,24 +312,24 @@ class Payment implements PesaCrud
                 $amountLimit = (float)$userLimitsArray['amt_limit'];
                 $transactionLimit = (float)$userLimitsArray['txn_limit'];
 
-                $feedback = array();
+                $errors = array();
                 if ((float)$amount > $amountLimit) {
                     $message = "The amount provided exceeds the your Limit,
                     to upgrade your transaction amount limit";
 
-                    array_push($feedback, array(
+                    array_push($errors, array(
                         "amt_limit_error" => $message
                     ));
                 }
                 if ((float)$transactionCount > $transactionLimit) {
                     $message = "You have exceeded number of times you can transact today! 
                     please try again tomorrow: COUNT IS.".$transactionCount."YOUR LIMIT IS".$transactionLimit;
-                    array_push($feedback, array(
+                    array_push($errors, array(
                         "txn_limit_error" => $message
                     ));
                 }
 
-                return $feedback;
+                return $errors;
 
             } else {
                 return array("error" => "user limits not found");
