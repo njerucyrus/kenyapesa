@@ -79,7 +79,28 @@ class Subscription implements PesaCrud {
     {
         // TODO: Implement update() method.
 
-    }
+
+        global $conn;
+        try{
+
+            $name = $this->getName();
+            $email = $this->getEmail();
+
+            $stmt = $conn->prepare("UPDATE  subscription SET name=:name, email=:email WHERE id=:id");
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":email", $email);
+            $stmt->execute();
+            return true;
+
+        }catch (PDOException $e) {
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+            return false;
+
+    }}
 
     public static function delete($id)
     {
