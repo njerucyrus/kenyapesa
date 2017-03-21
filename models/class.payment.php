@@ -289,7 +289,7 @@ class Payment implements PesaCrud
      * payment
      * if the user meets our requirement the function returns an empty
      * otherwise the function will return an array of errors.
-     * we can user count() function provided by php to display
+     * we can use count() function provided by php to display
      * the specific error messages by getting the specified index
      * eg if count() returns 2 then we read the error at  index 0 And
      * index 1 otherwise only read the error at index 0

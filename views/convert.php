@@ -9,6 +9,7 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 
 
+
 ?>
 <script src="../public/assets/js/jquery-3.1.1.min.js"></script>
 <script>
@@ -18,7 +19,6 @@ include(__DIR__ . '/../models/class.calculator.php');
     })
 </script>
 <script>
-
     function checkLimit() {
         var value = $('#dollars').val();
         var url = 'limits.php';
@@ -219,12 +219,7 @@ include(__DIR__ . '/../models/class.calculator.php');
 
                 </div>
             </div>
-
         </header>
-
-
-
-
     </header> <!--End of header -->
 
 
@@ -332,7 +327,6 @@ include(__DIR__ . '/../models/class.calculator.php');
                 </div>
             </div>
         </section>
-
 
         <section class="footer">
             <div class="container">
