@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">PremierePesa</a>
+        <a class="navbar-brand" href="dashboard.php">PremierePesa</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav ">
@@ -25,7 +25,7 @@
             <li><a href="admin_rates.php">Rates & Limits</a></li>
             <li><a href="https://uhchat.net/admin/">Live Chat</a></li>
             <li><a href="#">Reviews</a></li>
-            <li><a href="subscription.php">Subscription</a></li>
+            <li><a href="manage_subscription.php">Subscription</a></li>
 
 <!--            <li class="dropdown">-->
 <!--                <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Farm Records-->
