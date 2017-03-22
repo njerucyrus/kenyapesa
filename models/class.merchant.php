@@ -75,6 +75,10 @@ class Merchant implements PesaCrud{
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
     public function update($id)
     {
         global $conn;
@@ -99,6 +103,10 @@ class Merchant implements PesaCrud{
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
     public static function delete($id)
     {
         global $conn;
@@ -120,6 +128,10 @@ class Merchant implements PesaCrud{
         }
     }
 
+    /**
+     * @param $id
+     * @return null|PDOStatement
+     */
     public static function getById($id)
     {
         global $conn;
@@ -146,6 +158,9 @@ class Merchant implements PesaCrud{
         }
     }
 
+    /**
+     * @return null|PDOStatement
+     */
     public static function all()
     {
         global $conn;
@@ -171,6 +186,12 @@ class Merchant implements PesaCrud{
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     * set the mail with the specified id active.
+     * only active mail will be used in paypal
+     */
     public static function activateMerchantEmail($id){
         global $conn;
         try{
@@ -193,6 +214,11 @@ class Merchant implements PesaCrud{
             return false;
         }
     }
+
+    /**
+     * @param $id
+     * @return bool
+     */
     public static function deactivateMerchantEmail($id){
         global $conn;
         try{
