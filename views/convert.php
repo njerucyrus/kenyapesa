@@ -1,12 +1,13 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: hudutech
  * Date: 3/16/17
  * Time: 10:19 PM
  */
-include(__DIR__ . '/../models/class.calculator.php');
-
+include __DIR__ . '/../models/class.calculator.php';
+require_once __DIR__.'/../models/class.payment.php';
 
 
 ?>
@@ -163,14 +164,66 @@ include(__DIR__ . '/../models/class.calculator.php');
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class='preloader'>
-<!--    <div class='loaded'>&nbsp;</div>-->
+    <div class='loaded'>&nbsp;</div>
 </div>
 
 <div class="culmn">
 
     <header id="main_menu" class="header navbar-fixed-top">
 
-     <?php include_once 'views_navbar.php';?>
+        <header id="main_menu" class="header navbar-fixed-top">
+            <div class="main_menu_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="nave_menu">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#home">
+                                            <img src="../public/assets/images/logo.png"/>
+                                        </a>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="../base.php#home">HOME</a></li>
+                                            <li><a href="../base.php#service">Services</a></li>
+                                            <li><a href="../base.php#rates">Rates</a></li>
+                                            <li><a href="../base.php#about">About</a></li>
+                                            <li><a href="../base.php#testimonial">Testimonials</a></li>
+                                            <li><a href="../base.php#signup">Join</a></li>
+                                            <li><a href="../base.php#contact">CONTACT</a></li>
+
+
+
+                                        </ul>
+
+
+                                    </div>
+
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+
+
 
 
     </header> <!--End of header -->
@@ -180,7 +233,6 @@ include(__DIR__ . '/../models/class.calculator.php');
         <div class="row">
 
             <div class="container">
-
                 <?php
                 if(isset($_GET['lmt_error'])){
                     $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
@@ -210,15 +262,27 @@ include(__DIR__ . '/../models/class.calculator.php');
                 }
                 ?>
 
-
                 <div class="col col-md-6 col-md-offset-3">
                     <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
-                    <form class="form-group">
+                    <form class="form-group" method="post" action="checkout.php">
                         <input type="number" onkeyup="checkLimit()" class="form-control" name="dollars" id="dollars" placeholder="Enter Amount in Dollars">
                         <br>
                         <p style="font-size: 1.2em; margin-left: 5px; color:#ff7200; " id="prefix_words">Your MPESA account will receive KES:</p>
                         <input type="number" class="form-control" id="shillings" disabled>
+
+                        <?php
+                        if(isset($_SESSION['username'])){
+                            ?>
                         <input type="submit" value="Checkout" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">
+                        <?php
+                        }
+                        else{
+                          ?>
+                        <a href="login.php"  class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">Login to get Started</a>
+                        <?php
+                        }
+                        ?>
+
                     </form>
                 </div>
 
@@ -227,7 +291,6 @@ include(__DIR__ . '/../models/class.calculator.php');
         </div>
 
     </div>
-
 
 
 <!--    steps of transactions-->
@@ -365,7 +428,118 @@ include(__DIR__ . '/../models/class.calculator.php');
 
     <div id="footers">
 
-       <?php include_once 'views_footer.php';?>
+        <section id="footer" class="footer_widget">
+            <div class="video_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="main_widget">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                                            <div class="footer_logo">
+                                                <img src="../public/assets/images/logo.png" alt="" />
+                                            </div>
+                                            <p>Primierpesa are provides of money transaction services that include transfering money from paypal to mpesa and also tran
+                                                transfering money from Mpesa to your Paypal account.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3  col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>SITEMAP</h4>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="../base.php#home">HOME</a></li>
+                                                <li><a href="../base.php#service">Services</a></li>
+                                                <li><a href="../base.php#rates">Rates</a></li>
+                                                <li><a href="../base.php#about">About</a></li>
+                                                <li><a href="../base.php#testimonial">Testimonials</a></li>
+                                                <li><a href="../base.php#signup">Join</a></li>
+                                                <li><a href="../base.php#contact">CONTACT</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3  col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>Services</h4>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="convert.php">Paypal to Mpesa</a></li>
+                                                <li><a href="#">Mpesa to Paypal</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>Contact us</h4>
+                                                <div class="separator"></div>
+
+                                            </div>
+
+                                            <div class="footer_subcribs_area">
+                                               <p> <i class="fa fa-mobile" aria-hidden="true"></i>
+                                                <span> Phone: 0723013549</span></p>
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                                <span> Email: support@premierpesa.co.ke</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main_footer">
+                            <div class="row">
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="copyright_text">
+                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="http://hudutech.com">Hudutech Solutions</a><?php echo date("Y");?> All Rights Reserved</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="flowus">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-youtube"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                        <!--                            </div>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
 
     </div>
 
@@ -387,7 +561,6 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 <script src="../public/assets/js/plugins.js"></script>
 <script src="../public/assets/js/main.js"></script>
-<script src="https://uhchat.net/code.php?f=3ff3c3"></script>
 
 </body>
 </html>
