@@ -81,9 +81,80 @@ include(__DIR__ . '/../models/class.calculator.php');
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
 
-<?php
-include_once 'views_header.php';
-?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Kenyapesa Fastest way to transfer money from paypay to mpesa</title>
+    <!-- Meta Tag Manager -->
+    <meta name="description" content="Money transfer services" />
+    <meta name="keywords" content="PayPal to Mpesa" />
+    <meta name="keywords" content="PayPal Mpesa" />
+    <meta name="keywords" content="Withdraw PayPal Kenya" />
+    <!-- / Meta Tag Manager -->
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!--        <!--Google Font link-->
+    <!--        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">-->
+    <!--        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">-->
+
+    <!--    <link rel="stylesheet" href="public/assets/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../public/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../public/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/assets/css/magnific-popup.css">
+
+
+    <!--For Plugins external css-->
+    <link rel="stylesheet" href="../public/assets/css/plugins.css" />
+
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="../public/assets/css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/custom.css" type="text/css">
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="../public/assets/css/responsive.css" />
+
+    <script src="../public/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+    <style>
+        .login_div {
+            margin-top: 125px;
+            margin-bottom: 3.5em;
+            background: transparent;
+
+        }
+
+        input[type=text], input[type=email], input[type=password], input[type=number] {
+            height: 50px;
+            border-radius: 25px !important;
+
+        }
+
+    </style>
+
+
+    <link rel="stylesheet" href="../public/assets/css/custom.css">
+
+    <style>
+        .login_div {
+            margin-top: 125px;
+            margin-bottom: 3.5em;
+            background: transparent;
+
+        }
+
+        input[type=text], input[type=email], input[type=password], input[type=number] {
+            height: 50px;
+            border-radius: 25px !important;
+
+        }
+
+    </style>
+
 
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="200">
@@ -99,9 +170,57 @@ include_once 'views_header.php';
 
     <header id="main_menu" class="header navbar-fixed-top">
 
-      <?php
-      include_once 'views_navbar.php';
-      ?>
+        <header id="main_menu" class="header navbar-fixed-top">
+            <div class="main_menu_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="nave_menu">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#home">
+                                            <img src="../public/assets/images/logo.png"/>
+                                        </a>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="../base.php#home">HOME</a></li>
+                                            <li><a href="../base.php#service">Services</a></li>
+                                            <li><a href="../base.php#rates">Rates</a></li>
+                                            <li><a href="../base.php#about">About</a></li>
+                                            <li><a href="../base.php#testimonial">Testimonials</a></li>
+                                            <li><a href="../base.php#signup">Join</a></li>
+                                            <li><a href="../base.php#contact">CONTACT</a></li>
+
+
+
+                                        </ul>
+
+
+                                    </div>
+
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
 
 
 
@@ -265,13 +384,119 @@ include_once 'views_header.php';
 
 
 
-
-
     <div id="footers">
 
-    <?php
-    include_once 'views_footer.php';
-    ?>
+        <section id="footer" class="footer_widget">
+            <div class="video_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="main_widget">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                                            <div class="footer_logo">
+                                                <img src="../public/assets/images/logo.png" alt="" />
+                                            </div>
+                                            <p>Primierpesa are provides of money transaction services that include transfering money from paypal to mpesa and also tran
+                                                transfering money from Mpesa to your Paypal account.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3  col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>SITEMAP</h4>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="../base.php#home">HOME</a></li>
+                                                <li><a href="../base.php#service">Services</a></li>
+                                                <li><a href="../base.php#rates">Rates</a></li>
+                                                <li><a href="../base.php#about">About</a></li>
+                                                <li><a href="../base.php#testimonial">Testimonials</a></li>
+                                                <li><a href="../base.php#signup">Join</a></li>
+                                                <li><a href="../base.php#contact">CONTACT</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3  col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>Services</h4>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <ul>
+                                                <li><a href="convert.php">Paypal to Mpesa</a></li>
+                                                <li><a href="#">Mpesa to Paypal</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                            <div class="footer_title">
+                                                <h4>Contact us</h4>
+                                                <div class="separator"></div>
+
+                                            </div>
+
+                                            <div class="footer_subcribs_area">
+                                               <p> <i class="fa fa-mobile" aria-hidden="true"></i>
+                                                <span> Phone: 0723013549</span></p>
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                                <span> Email: support@premierpesa.co.ke</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main_footer">
+                            <div class="row">
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="copyright_text">
+                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="http://hudutech.com">Hudutech Solutions</a><?php echo date("Y");?> All Rights Reserved</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="flowus">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-youtube"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                        <!--                            </div>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
 
 
     </div>

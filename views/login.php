@@ -10,49 +10,30 @@ session_start();
 require_once __DIR__ . '/../models/class.auth.php';
 require_once __DIR__ . '/../models/user.php';
 
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
     header("Location: ../base.php");
 }
 
 if (isset($_POST['email']) and isset($_POST['password'])) {
 
-        $username = $_POST['email'];
-        $password = $_POST['password'];
+    $username = $_POST['email'];
+    $password = $_POST['password'];
 
-        $auth = new Auth();
+    $auth = new Auth();
 
-        $authenticated = $auth->authenticate($username, $password);
-        if ($authenticated) {
-            /*get the user and set the limits to the session variables*/
-            $userObject = User::getById($username);
-            if (is_object($userObject)) {
-                $row = $userObject->fetch(PDO::FETCH_ASSOC);
+    $authenticated = $auth->authenticate($username, $password);
+    if ($authenticated) {
 
-                echo $row['transaction_limit'];
-                echo $row['amount_limit'];
+        $_SESSION['username'] = $username;
 
-                $transaction_limit = $row['transaction_limit'];
-                $amount_limit = $row['amount_limit'];
-                $_SESSION['username'] = $username;
-                $_SESSION['transaction_limit'] = $transaction_limit;
-                $_SESSION['amount_limit'] = $amount_limit;
-                //echo "YOU ARE NOW LOGGED IN AS " . $_SESSION['username'];
-                header("Location: ../base.php");
-            } else {
-                echo "ERROR OCCURRED";
-            }
-
-
-        } else {
-            unset($_SESSION['username']);
-            unset($_SESSION['transaction_limit']);
-            unset($_SESSION['amount_limit']);
-            session_destroy();
-            echo "invalid username/password";
-        }
-
+        header("Location: ../base.php");
+    } else {
+        session_destroy();
+        echo "invalid username/password";
+    }
 
 }
+
 ?>
 
 
@@ -71,13 +52,11 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Kenyapesa Fastest way to transfer money from paypay to mpesa</title>
     <!-- Meta Tag Manager -->
-    <meta name="description" content="Money transfer services" />
-    <meta name="keywords" content="PayPal to Mpesa" />
-    <meta name="keywords" content="PayPal Mpesa" />
-    <meta name="keywords" content="Withdraw PayPal Kenya" />
+    <meta name="description" content="Money transfer services"/>
+    <meta name="keywords" content="PayPal to Mpesa"/>
+    <meta name="keywords" content="PayPal Mpesa"/>
+    <meta name="keywords" content="Withdraw PayPal Kenya"/>
     <!-- / Meta Tag Manager -->
-
-
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,13 +74,13 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
 
 
     <!--For Plugins external css-->
-    <link rel="stylesheet" href="../public/assets/css/plugins.css" />
+    <link rel="stylesheet" href="../public/assets/css/plugins.css"/>
 
     <!--Theme custom css -->
     <link rel="stylesheet" href="../public/assets/css/style.css">
     <link rel="stylesheet" href="../public/assets/css/custom.css" type="text/css">
     <!--Theme Responsive css-->
-    <link rel="stylesheet" href="../public/assets/css/responsive.css" />
+    <link rel="stylesheet" href="../public/assets/css/responsive.css"/>
 
     <script src="../public/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
@@ -146,7 +125,8 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
                             <div class="container-fluid">
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                         <span class="sr-only">Toggle navigation</span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -158,7 +138,6 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
-
 
 
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -174,13 +153,15 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
 
 
                                         <li>
-                                            <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                               aria-expanded="false">
                                                 <span class="glyphicon glyphicon-search"></span></a>
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <form class="navbar-form" role="search">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" placeholder="Search">
+                                                            <input type="text" class="form-control"
+                                                                   placeholder="Search">
                                                         </div>
                                                     </form>
                                                 </li>
@@ -240,9 +221,10 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
                                     <div class="col-sm-3 col-xs-12">
                                         <div class="single_widget wow fadeIn" data-wow-duration="800ms">
                                             <div class="footer_logo">
-                                                <img src="../public/assets/images/logo.png" alt="" />
+                                                <img src="../public/assets/images/logo.png" alt=""/>
                                             </div>
-                                            <p>Primierpesa are provides of money transaction services that include transfering money from paypal to mpesa and also tran
+                                            <p>Primierpesa are provides of money transaction services that include
+                                                transfering money from paypal to mpesa and also tran
                                                 transfering money from Mpesa to your Paypal account.
                                             </p>
 
@@ -321,7 +303,9 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
 
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="copyright_text">
-                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="http://hudutech.com">Hudutech Solutions</a><?php echo date("Y");?> All Rights Reserved</p>
+                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i
+                                                    class="fa fa-heart"></i> by <a href="http://hudutech.com">Hudutech
+                                                Solutions</a><?php echo date("Y"); ?> All Rights Reserved</p>
                                     </div>
                                 </div>
 

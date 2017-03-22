@@ -6,8 +6,8 @@
  * Date: 3/20/17
  * Time: 8:36 PM
  */
-require_once __DIR__.'/models/class.payment.php';
-require_once __DIR__.'/models/class.calculator.php';
+require_once __DIR__ . '/../models/class.payment.php';
+require_once __DIR__ . '/../models/class.calculator.php';
 class Paypal_IPN
 {
     private $_url;
@@ -102,17 +102,8 @@ class Paypal_IPN
                 $payment->setUserId(2);
                 $payment->setShilling($shillings);
 
-                $created = $payment->create();
-                if($created){
-                    $fd = fopen('test.txt', 'w');
-                    fwrite($fd, 'paymentcreated');
-                    fclose($fd);
-                }
-                else{
-                    $fd = fopen('test.txt', 'w');
-                    fwrite($fd, 'error occurred');
-                    fclose($fd);
-                }
+                $payment->create();
+
 
 
             }
@@ -123,3 +114,6 @@ class Paypal_IPN
 
     }
 }
+//execute the paypal ipn
+$ipn = new Paypal_IPN('sandbox');
+$ipn->run();

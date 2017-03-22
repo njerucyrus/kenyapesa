@@ -479,7 +479,6 @@ class User extends Auth implements PesaCrud
             )));
             return null;
         }
-
     }
 }
 
