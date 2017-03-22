@@ -1,15 +1,11 @@
 <?php
-session_start();
 /**
  * Created by PhpStorm.
  * User: hudutech
  * Date: 3/16/17
  * Time: 10:19 PM
  */
-require_once __DIR__.'/../models/class.payment.php';
 include(__DIR__ . '/../models/class.calculator.php');
-
-
 
 
 
@@ -22,6 +18,7 @@ include(__DIR__ . '/../models/class.calculator.php');
     })
 </script>
 <script>
+
     function checkLimit() {
         var value = $('#dollars').val();
         var url = 'limits.php';
@@ -38,7 +35,6 @@ include(__DIR__ . '/../models/class.calculator.php');
                         if (amt < min ){
                             $('#prefix_words').text('amount less than allowed minimum of '+min+' dollars');
                             $("#shillings").val(0);
-
                         }
                         else if (amt > max) {
 
@@ -71,6 +67,7 @@ include(__DIR__ . '/../models/class.calculator.php');
         )
     }
 </script>
+
 
 
 <!doctype html>
@@ -160,7 +157,7 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="200" bgcolor="#bdbdbd">
+<body data-spy="scroll" data-target=".navbar" data-offset="200">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -222,7 +219,12 @@ include(__DIR__ . '/../models/class.calculator.php');
 
                 </div>
             </div>
+
         </header>
+
+
+
+
     </header> <!--End of header -->
 
 
@@ -230,6 +232,7 @@ include(__DIR__ . '/../models/class.calculator.php');
         <div class="row">
 
             <div class="container">
+<<<<<<< HEAD
                 <?php
                 if(isset($_GET['lmt_error'])){
                     $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
@@ -259,27 +262,16 @@ include(__DIR__ . '/../models/class.calculator.php');
                 }
                 ?>
 
+=======
+>>>>>>> 9b153ed02f290415a57bbcd5c268ea39f3193077
                 <div class="col col-md-6 col-md-offset-3">
-                    <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200; font-weight: bold;">Check the amount of Cash you will receive using our Calculator Below.</h6>
-                    <form class="form-group" action="checkout.php" method="post">
+                    <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
+                    <form class="form-group">
                         <input type="number" onkeyup="checkLimit()" class="form-control" name="dollars" id="dollars" placeholder="Enter Amount in Dollars">
                         <br>
                         <p style="font-size: 1.2em; margin-left: 5px; color:#ff7200; " id="prefix_words">Your MPESA account will receive KES:</p>
-                        <input type="number" class="form-control" id="shillings" name="shillings" disabled>
-
-                        <?php
-                        if(isset($_SESSION['username'])){
-                            ?>
-                        <input type="submit" value="Checkout Now" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px; font-size: 1em;">
-                        <?php
-                        }
-                        else{
-                        ?>
-                        <a href="login.php" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px; font-size: 1em;">Login to get started</a>
-                        <?php
-                        }
-                        ?>
-
+                        <input type="number" class="form-control" id="shillings" disabled>
+                        <input type="submit" value="Checkout" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">
                     </form>
                 </div>
 
@@ -288,6 +280,8 @@ include(__DIR__ . '/../models/class.calculator.php');
         </div>
 
     </div>
+
+
 
 <!--    steps of transactions-->
     <div class="container ">
@@ -504,6 +498,7 @@ include(__DIR__ . '/../models/class.calculator.php');
             </div>
         </section>
 
+
         <section class="footer">
             <div class="container">
                 <div class="row">
@@ -556,8 +551,6 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 <script src="../public/assets/js/plugins.js"></script>
 <script src="../public/assets/js/main.js"></script>
-
-
 
 </body>
 </html>
