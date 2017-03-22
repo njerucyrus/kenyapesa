@@ -35,9 +35,10 @@ require_once __DIR__ . '/../models/user.php';
                     $reviews = UserFeedback::all();
                     if (!is_null($reviews)) {
                         while ($review = $reviews->fetch(PDO::FETCH_ASSOC)) {
-                            $user = User::getId($review['user_id']);
+                            $userObject = User::getId($review['user_id']);
                             $full_name = 'anonymous';
-                            if (!is_null($user)) {
+                            if (!is_null($userObject)) {
+                                $user = $userObject->fetch(PDO::FETCH_ASSOC);
                                 $full_name = $user['first_name'] . " " . $user['last_name'] . "@" . $user['paypal_email'];
                             }
                             ?>

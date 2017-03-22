@@ -232,6 +232,38 @@ include(__DIR__ . '/../models/class.calculator.php');
         <div class="row">
 
             <div class="container">
+<<<<<<< HEAD
+                <?php
+                if(isset($_GET['lmt_error'])){
+                    $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
+                    if(count($errors)>1){
+                        ?>
+                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierPesa Says: Unable To Complete your request
+                        <?php echo $errors[0]["amt_limit_error"]."\n AND \n".$errors[1]["txn_limit_error"]?>
+                        </div>
+
+                    <?php
+                    }else{
+                        ?>
+
+                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierPesa Says: Unable To Complete your request
+                            &nbsp;
+                            <?php
+                            if($errors[0]["amt_limit_error"]){
+                                echo $errors[0]["amt_limit_error"]."  For Account ".$_SESSION['username'];
+                            }
+                            else{
+                                $errors[0]["txn_limit_error"];
+                            }
+                            ?>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+
+=======
+>>>>>>> 9b153ed02f290415a57bbcd5c268ea39f3193077
                 <div class="col col-md-6 col-md-offset-3">
                     <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
                     <form class="form-group">
