@@ -314,8 +314,7 @@ class Payment implements PesaCrud
 
                 $errors = array();
                 if ((float)$amount > $amountLimit) {
-                    $message = "The amount provided exceeds the your Limit,
-                    to upgrade your transaction amount limit";
+                    $message = "The amount provided exceeds the Your Allowed Limit of ( <span style='color:#ff7200;'>" .$amountLimit." USD</span> )";
 
                     array_push($errors, array(
                         "amt_limit_error" => $message
@@ -323,7 +322,7 @@ class Payment implements PesaCrud
                 }
                 if ((float)$transactionCount > $transactionLimit) {
                     $message = "You have exceeded number of times you can transact today! 
-                    please try again tomorrow: COUNT IS.".$transactionCount."YOUR LIMIT IS".$transactionLimit;
+                    please try again tomorrow >>>> <span style='color: #ff7200;'> You are eligible to Only [ ".$transactionLimit." ] Transactions Per Day </span>";
                     array_push($errors, array(
                         "txn_limit_error" => $message
                     ));

@@ -6,7 +6,9 @@ session_start();
  * Date: 3/16/17
  * Time: 10:19 PM
  */
+require_once __DIR__.'/../models/class.payment.php';
 include(__DIR__ . '/../models/class.calculator.php');
+
 
 
 
@@ -69,7 +71,6 @@ include(__DIR__ . '/../models/class.calculator.php');
         )
     }
 </script>
-
 
 
 <!doctype html>
@@ -159,7 +160,7 @@ include(__DIR__ . '/../models/class.calculator.php');
 
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="200">
+<body data-spy="scroll" data-target=".navbar" data-offset="200" bgcolor="#bdbdbd">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -229,6 +230,35 @@ include(__DIR__ . '/../models/class.calculator.php');
         <div class="row">
 
             <div class="container">
+                <?php
+                if(isset($_GET['lmt_error'])){
+                    $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
+                    if(count($errors)>1){
+                        ?>
+                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierePesa Says: Unable To Complete your request
+                        <?php echo $errors[0]["amt_limit_error"]."\n AND \n".$errors[1]["txn_limit_error"]?>
+                        </div>
+
+                    <?php
+                    }else{
+                        ?>
+
+                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierePesa Says: Unable To Complete your request
+                            &nbsp;
+                            <?php
+                            if($errors[0]["amt_limit_error"]){
+                                echo $errors[0]["amt_limit_error"]."  For Account ".$_SESSION['username'];
+                            }
+                            else{
+                                $errors[0]["txn_limit_error"];
+                            }
+                            ?>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+
                 <div class="col col-md-6 col-md-offset-3">
                     <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200; font-weight: bold;">Check the amount of Cash you will receive using our Calculator Below.</h6>
                     <form class="form-group" action="checkout.php" method="post">
