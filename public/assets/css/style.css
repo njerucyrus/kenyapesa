@@ -673,6 +673,10 @@ input::-ms-input-placeholder {
 .home{
     background: url(../images/homebg.jpg) no-repeat 100% 100%;
     background-size: cover;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
 }
 
 .home .main_home{

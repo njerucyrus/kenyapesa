@@ -57,7 +57,7 @@
 
                         <div class="col-sm-5">
                             <div class="single_about_left_img margin-top-40 text-center wow fadeInLeft" data-wow-duration=".6s">
-                                <img src="public/assets/images/abright.png" alt="" />
+                                <img src="public/assets/images/abright.jpg" alt="" />
                             </div>
                         </div>
                     </div>

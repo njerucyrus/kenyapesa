@@ -48,21 +48,23 @@
                                 <li><a href="#testimonial">Testimonials</a></li>
                                 <li><a href="#signup">Join</a></li>
                                 <li><a href="#contact">Contact</a></li>
+                                <?php
+                                if(isset($_SESSION["username"])){
+                                    ?>
+                                <li><a href="views/logout.php">Logout</a></li>
+                                    <?php
+                                }
+                               else{
+                                    ?>
+                                <li><a href="views/login.php">Login</a></li>
+                                <?php
+                               }
+                                ?>
 
 
-                                <li>
-                                    <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <span class="fa fa-search"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <form class="navbar-form" role="search">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Search">
-                                                </div>
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </li>
+
+
+
                             </ul>
 
 

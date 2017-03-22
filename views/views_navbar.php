@@ -44,6 +44,18 @@
                                     <li><a href="../base.php#testimonial">Testimonials</a></li>
                                     <li><a href="../base.php#signup">Join</a></li>
                                     <li><a href="../base.php#contact">CONTACT</a></li>
+                                    <?php
+                                    if(isset($_SESSION["username"])){
+                                        ?>
+                                        <li><a href="views/logout.php">Logout</a></li>
+                                        <?php
+                                    }
+                                    else{
+                                        ?>
+                                        <li><a href="views/login.php">Login</a></li>
+                                        <?php
+                                    }
+                                    ?>
 
 
 
