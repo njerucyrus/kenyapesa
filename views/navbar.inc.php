@@ -32,10 +32,14 @@
 
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="pull-left"><a href="tel:+25723013549"> <i class="fa fa-mobile aria-hidden="true" style="alignment: left"></i>
+                                        Help line: 0723013549</a></li>
+                            </ul>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="tel:+25723013549> <i class="fa fa-mobile aria-hidden="true" style="alignment: left"></i>
-                                        Help line: 0723013549</a></li>
+
+
 
                                 <li><a href="#home">Home</a></li>
                                 <li><a href="#service">Services</a></li>
