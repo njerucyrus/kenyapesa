@@ -65,7 +65,7 @@ if(isset($_SESSION['username'])) {
 
                 <!-- Specify details about the item that buyers will purchase. -->
                 <input type="hidden" name="item_name" value="MPESA_TOP_UP">
-                <input type="hidden" name="item_number" value="<?php echo uniqid('TOPUP', true) ;?>">
+                <input type="hidden" name="item_number" value="<?php uniqid('TOPUP', true) ;?>">
                 <!-- set amount using js-->
                 <input type="hidden" name="amount"  value="<?php echo $amount?>">
                 <!-->

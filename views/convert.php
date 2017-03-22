@@ -1,12 +1,13 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: hudutech
  * Date: 3/16/17
  * Time: 10:19 PM
  */
-include(__DIR__ . '/../models/class.calculator.php');
-
+include __DIR__ . '/../models/class.calculator.php';
+require_once __DIR__.'/../models/class.payment.php';
 
 
 ?>
@@ -263,7 +264,7 @@ include(__DIR__ . '/../models/class.calculator.php');
 
                 <div class="col col-md-6 col-md-offset-3">
                     <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
-                    <form class="form-group">
+                    <form class="form-group" method="post" action="checkout.php">
                         <input type="number" onkeyup="checkLimit()" class="form-control" name="dollars" id="dollars" placeholder="Enter Amount in Dollars">
                         <br>
                         <p style="font-size: 1.2em; margin-left: 5px; color:#ff7200; " id="prefix_words">Your MPESA account will receive KES:</p>
@@ -281,7 +282,6 @@ include(__DIR__ . '/../models/class.calculator.php');
                         <?php
                         }
                         ?>
-
 
                     </form>
                 </div>
