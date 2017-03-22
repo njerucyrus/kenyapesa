@@ -232,7 +232,6 @@ include(__DIR__ . '/../models/class.calculator.php');
         <div class="row">
 
             <div class="container">
-<<<<<<< HEAD
                 <?php
                 if(isset($_GET['lmt_error'])){
                     $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
@@ -262,8 +261,6 @@ include(__DIR__ . '/../models/class.calculator.php');
                 }
                 ?>
 
-=======
->>>>>>> 9b153ed02f290415a57bbcd5c268ea39f3193077
                 <div class="col col-md-6 col-md-offset-3">
                     <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
                     <form class="form-group">
@@ -271,7 +268,21 @@ include(__DIR__ . '/../models/class.calculator.php');
                         <br>
                         <p style="font-size: 1.2em; margin-left: 5px; color:#ff7200; " id="prefix_words">Your MPESA account will receive KES:</p>
                         <input type="number" class="form-control" id="shillings" disabled>
+
+                        <?php
+                        if(isset($_SESSION['username'])){
+                            ?>
                         <input type="submit" value="Checkout" class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">
+                        <?php
+                        }
+                        else{
+                          ?>
+                        <a href="login.php"  class="btn btn-primary" style="background-color:#0099e5;border-color:#0099e5;margin-top: 10px;">Login to get Started</a>
+                        <?php
+                        }
+                        ?>
+
+
                     </form>
                 </div>
 
@@ -280,7 +291,6 @@ include(__DIR__ . '/../models/class.calculator.php');
         </div>
 
     </div>
-
 
 
 <!--    steps of transactions-->
