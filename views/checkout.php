@@ -87,7 +87,7 @@ if(isset($_SESSION['username'])) {
         <?php
         }
         else{
-            header('Location: convert.php?lmt_error='.$amount);
+            header('Location: convert.php?lmt_error='.urlencode($amount));
         }
     }
 }
