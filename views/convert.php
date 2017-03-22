@@ -235,7 +235,7 @@ include(__DIR__ . '/../models/class.calculator.php');
                     $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
                     if(count($errors)>1){
                         ?>
-                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierePesa Says: Unable To Complete your request
+                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierPesa Says: Unable To Complete your request
                         <?php echo $errors[0]["amt_limit_error"]."\n AND \n".$errors[1]["txn_limit_error"]?>
                         </div>
 
@@ -243,7 +243,7 @@ include(__DIR__ . '/../models/class.calculator.php');
                     }else{
                         ?>
 
-                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierePesa Says: Unable To Complete your request
+                        <div class="col-md-6 col-md-offset-3 alert alert-info" style="font-size: 1.4em;">PremierPesa Says: Unable To Complete your request
                             &nbsp;
                             <?php
                             if($errors[0]["amt_limit_error"]){
