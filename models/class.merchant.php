@@ -5,8 +5,8 @@
  * Date: 3/22/17
  * Time: 2:34 PM
  */
-require_once __DIR__.'interface.crud.php';
-require_once __DIR__.'trait.query.php';
+require_once __DIR__.'/interface.crud.php';
+require_once __DIR__.'/trait.query.php';
 require_once __DIR__ .'/../db/class.db.php';
 
 class Merchant implements PesaCrud{
@@ -171,4 +171,48 @@ class Merchant implements PesaCrud{
         }
     }
 
+    public static function activateMerchantEmail($id){
+        global $conn;
+        try{
+
+
+            $stmt = $conn->prepare("UPDATE merchants SET `status`=1 WHERE id=:id;
+                                    UPDATE merchants SET `status`=0 WHERE id!=:id;
+                                   ");
+
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            return true;
+
+        } catch (PDOException $e){
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+
+            return false;
+        }
+    }
+    public static function deactivateMerchantEmail($id){
+        global $conn;
+        try{
+
+
+            $stmt = $conn->prepare("UPDATE merchants SET `status`=0 WHERE id=:id;");
+
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            return true;
+
+        } catch (PDOException $e){
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
+
+            return false;
+        }
+    }
+
 }
+
