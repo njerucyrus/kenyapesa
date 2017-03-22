@@ -37,7 +37,6 @@ if(isset($_POST['first_name'], $_POST['last_name'],
     /*DEFAULT attributes*/
     $user->setTransactionLimit(3);
     $user->setAmountLimit(20);
-    $user->setStatus('NotApproved');
 
     $created = $user->create();
 
