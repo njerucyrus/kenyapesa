@@ -34,7 +34,7 @@
                                                 <h4>Transfer money conveniently from your Paypal Account to your mpesa account  </h4>
 
 
-                                                <a href="" class="btn btn-primary">Convert</a>
+                                                <a href="views/convert.php" class="btn btn-primary" style="background-color: #0099e5; border-color: #0099e5;">Convert</a>
                                             </div>
                                         </div>
 
@@ -57,7 +57,7 @@
                                                 </div>
                                                 <h4>Transfer or Top up your paypal account directly from your mpesa account</h4>
 
-                                                <a href="" class="btn btn-primary">Convert</a>
+                                                <a href="#" class="btn btn-primary"  style="background-color: #0099e5; border-color: #0099e5;">Convert</a>
                                             </div>
                                         </div>
 

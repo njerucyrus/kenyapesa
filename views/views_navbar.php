@@ -47,12 +47,12 @@
                                     <?php
                                     if(isset($_SESSION["username"])){
                                         ?>
-                                        <li><a href="views/logout.php">Logout</a></li>
+                                        <li><a href="logout.php">Logout</a></li>
                                         <?php
                                     }
                                     else{
                                         ?>
-                                        <li><a href="views/login.php">Login</a></li>
+                                        <li><a href="login.php">Login</a></li>
                                         <?php
                                     }
                                     ?>
