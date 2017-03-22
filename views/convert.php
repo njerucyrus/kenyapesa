@@ -163,66 +163,14 @@ include(__DIR__ . '/../models/class.calculator.php');
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class='preloader'>
-    <div class='loaded'>&nbsp;</div>
+<!--    <div class='loaded'>&nbsp;</div>-->
 </div>
 
 <div class="culmn">
 
     <header id="main_menu" class="header navbar-fixed-top">
 
-        <header id="main_menu" class="header navbar-fixed-top">
-            <div class="main_menu_bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="nave_menu">
-                            <nav class="navbar navbar-default">
-                                <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <a class="navbar-brand" href="#home">
-                                            <img src="../public/assets/images/logo.png"/>
-                                        </a>
-                                    </div>
-
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-
-
-
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li><a href="../base.php#home">HOME</a></li>
-                                            <li><a href="../base.php#service">Services</a></li>
-                                            <li><a href="../base.php#rates">Rates</a></li>
-                                            <li><a href="../base.php#about">About</a></li>
-                                            <li><a href="../base.php#testimonial">Testimonials</a></li>
-                                            <li><a href="../base.php#signup">Join</a></li>
-                                            <li><a href="../base.php#contact">CONTACT</a></li>
-
-
-
-                                        </ul>
-
-
-                                    </div>
-
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </header>
-
-
+     <?php include_once 'views_navbar.php';?>
 
 
     </header> <!--End of header -->
@@ -232,7 +180,7 @@ include(__DIR__ . '/../models/class.calculator.php');
         <div class="row">
 
             <div class="container">
-<<<<<<< HEAD
+
                 <?php
                 if(isset($_GET['lmt_error'])){
                     $errors = Payment::authenticate_payment($_SESSION['username'], $_GET['lmt_error']);
@@ -262,8 +210,7 @@ include(__DIR__ . '/../models/class.calculator.php');
                 }
                 ?>
 
-=======
->>>>>>> 9b153ed02f290415a57bbcd5c268ea39f3193077
+
                 <div class="col col-md-6 col-md-offset-3">
                     <h6 style="font-size: 1.2em; margin-left: 5px; color:#ff7200;">Check the amount of Cash you will receive using our Calculator Below.</h6>
                     <form class="form-group">
