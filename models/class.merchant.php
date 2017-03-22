@@ -59,9 +59,9 @@ class Merchant implements PesaCrud{
 
             $merchantEmail = $this->getMerchantEmail();
 
-            $stmt = $conn->prepare("INSERT INTO merchants(marchant_email) VALUES (:marchant_email)");
+            $stmt = $conn->prepare("INSERT INTO merchants(merchant_email) VALUES (:merchant_email)");
 
-            $stmt->bindParam(":marchant_email", $merchantEmail);
+            $stmt->bindParam(":merchant_email", $merchantEmail);
             $stmt->execute();
             return true;
 
@@ -86,10 +86,10 @@ class Merchant implements PesaCrud{
 
             $merchantEmail = $this->getMerchantEmail();
 
-            $stmt = $conn->prepare("UPDATE merchants SET merchant_email=:marchant_email) WHERE id=:id");
+            $stmt = $conn->prepare("UPDATE merchants SET merchant_email=:merchant_email WHERE id=:id");
 
             $stmt->bindParam(":id", $id);
-            $stmt->bindParam(":marchant_email", $merchantEmail);
+            $stmt->bindParam(":merchant_email", $merchantEmail);
             $stmt->execute();
             return true;
 
