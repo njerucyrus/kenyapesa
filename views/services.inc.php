@@ -33,6 +33,7 @@
                                                 </div>
                                                 <h4>Transfer money conveniently from your Paypal Account to your mpesa account  </h4>
 
+
                                                 <a href="" class="btn btn-primary">Convert</a>
                                             </div>
                                         </div>
