@@ -16,16 +16,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">PremierePesa</a>
+        <a class="navbar-brand" href="../base.php">PremierePesa</a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav ">
-            <li><a href="dashboard.php">Users</a></li>
-            <li><a href="transactions_list.php">Transactions</a></li>
-            <li><a href="admin_rates.php">Rates & Limits</a></li>
-            <li><a href="admin_reviews.php">Reviews</a></li>
-            <li><a href="manage_subscription.php">Subscriptions</a></li>
-            <li><a href="https://uhchat.net/admin/">Live Chat</a></li>
+            <?php
+            if(isset($_SESSION['admin_username'])){
+                ?>
+
+                <li><a href="index.php">Users</a></li>
+                <li><a href="transactions_list.php">Transactions</a></li>
+                <li><a href="admin_rates.php">Rates & Limits</a></li>
+                <li><a href="admin_reviews.php">Reviews</a></li>
+                <li><a href="manage_subscription.php">Subscriptions</a></li>
+                <li><a href="https://uhchat.net/admin/">Live Chat</a></li>
+            <?php
+            }
+            else{
+                ?>
+                <li><a href="admin_login.php">Login</a></li>
+            <?php
+            }
+            ?>
+
 
 
 
@@ -59,8 +72,18 @@
                 <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Account
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-user-circle" style="font-size: 16px;">&nbsp;Logout</i></a></li>
-
+                    <?php
+                    if(isset($_SESSION['admin_username'])){
+                        ?>
+                    <li><a href="admin_logout.php"><i class="fa fa-user-circle" style="font-size: 16px;">&nbsp;Logout</i></a></li>
+                    <?php
+                    }
+                    else{
+                        ?>
+                    <li><a href="admin_login.php"><i class="fa fa-user-circle" style="font-size: 16px;">&nbsp;Login</i></a></li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </li>
         </ul>

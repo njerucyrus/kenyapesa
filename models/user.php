@@ -177,7 +177,6 @@ class User extends Auth implements PesaCrud
             $paypalEmail = $this->getPaypalEmail();
             $phoneNumber = $this->getPhoneNumber();
             $idNo = $this->getIdNo();
-            $status = $this->getStatus();
             $amountLimit = $this->getAmountLimit();
             $transactionLimit = $this->getTransactionLimit();
             $password = $this->getPassword();
@@ -187,7 +186,7 @@ class User extends Auth implements PesaCrud
                                     id_no, status, transaction_limit,
                                     amount_limit, password) VALUES(:first_name, :last_name,
                                     :paypal_email, :phone_number, 
-                                    :id_no, :status, :transaction_limit,
+                                    :id_no,  :transaction_limit,
                                     :amount_limit, :password) ");
 
             $stmt->bindParam(":first_name", $firstName);
@@ -195,7 +194,6 @@ class User extends Auth implements PesaCrud
             $stmt->bindParam(":paypal_email", $paypalEmail);
             $stmt->bindParam(":phone_number", $phoneNumber);
             $stmt->bindParam(":id_no", $idNo);
-            $stmt->bindParam(":status", $status);
             $stmt->bindParam(":transaction_limit", $transactionLimit);
             $stmt->bindParam(":amount_limit", $amountLimit);
             $stmt->bindParam(":password", $password);

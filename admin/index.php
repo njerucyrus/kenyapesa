@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: hudutech
@@ -6,6 +7,10 @@
  * Time: 12:34 AM
  */
 require_once __DIR__ . '/../models/user.php';
+if(!isset($_SESSION['admin_username'])){
+    header('Location: admin_login.php');
+}
+
 ?>
 
 <!DOCTYPE html>
