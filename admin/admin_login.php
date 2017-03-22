@@ -48,7 +48,7 @@ if(isset($_POST['username']) and isset($_POST['password'])){
 <div class=" container container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title form-signin-heading">Sign in to continue to Farm Manager</h1>
+            <h1 class="text-center login-title form-signin-heading">Sign in to continue to PremierPesa Admin Panel</h1>
 
             <div class="account-wall">
                 <img class="avartar" src="../public/assets/img/logo2.png" alt="Admin Login">

@@ -99,11 +99,11 @@
     }
 
     .avartar {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
+        height:180px;
+        width: 180px;
+        border-radius: 25%;
+        -webkit-border-radius: 25%;
+        -moz-border-radius: 25%;
         text-align: center;
         margin: 0 auto 10px;
         display: block;
