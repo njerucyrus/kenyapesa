@@ -12,12 +12,16 @@ trait ComplexQuery
 {
 
     /**
-     * @param $table
+     * @param $table = database table
      * @param $fields = array table columns
      * @param $options = array($key=>$value), $key is the
      * name of table column this parameter is used for
      * constriction of the sql query condition
      * @return null|PDOStatement
+     * key meta in options takes values of ASC OR DESC
+     * This specifies the type of ordering.
+     * order_by key is an array of columns used to order your
+     * results eg order_by =>array("column1", column2")
      */
     public static function customFilter($table, $fields, $options)
     {
