@@ -85,7 +85,7 @@ class UserFeedback implements PesaCrud
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return false;
         }
@@ -107,7 +107,7 @@ class UserFeedback implements PesaCrud
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return false;
         }
@@ -124,7 +124,7 @@ class UserFeedback implements PesaCrud
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -149,7 +149,7 @@ class UserFeedback implements PesaCrud
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return null;
@@ -174,7 +174,7 @@ class UserFeedback implements PesaCrud
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return null;
@@ -195,7 +195,7 @@ class UserFeedback implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -217,7 +217,7 @@ class UserFeedback implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;

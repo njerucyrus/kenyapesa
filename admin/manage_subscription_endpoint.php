@@ -38,12 +38,12 @@ function updateSubscription(){
 
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Updated Successfully"
+                "emailMessage" => "Updated Successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
 
@@ -52,7 +52,7 @@ function updateSubscription(){
     else{
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "All fields required"
+            "emailMessage" => "All fields required"
         )));
 
     }

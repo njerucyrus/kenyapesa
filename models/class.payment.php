@@ -166,7 +166,7 @@ class Payment implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return false;
         }
@@ -198,7 +198,7 @@ class Payment implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return false;
         }
@@ -217,7 +217,7 @@ class Payment implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return false;
         }
@@ -248,7 +248,7 @@ class Payment implements PesaCrud
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return null;
         }
@@ -275,7 +275,7 @@ class Payment implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return null;
         }
@@ -339,7 +339,7 @@ class Payment implements PesaCrud
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return array("exceptionError" => $e->getMessage());
         }

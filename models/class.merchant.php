@@ -68,7 +68,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -96,7 +96,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -121,7 +121,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -151,7 +151,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return null;
@@ -179,7 +179,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return null;
@@ -208,7 +208,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -233,7 +233,7 @@ class Merchant implements PesaCrud{
         } catch (PDOException $e){
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
 
             return false;

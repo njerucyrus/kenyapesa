@@ -42,19 +42,19 @@ function activate(){
         if ($activated){
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Merchant Email Activated successfully"
+                "emailMessage" => "Merchant Email Activated successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }
     else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "id not set "
+            "emailMessage" => "id not set "
         )));
     }
 }
@@ -68,19 +68,19 @@ function deactivate(){
         if ($deactivated){
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Merchant Email deactivated successfully"
+                "emailMessage" => "Merchant Email deactivated successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }
     else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "id not set "
+            "emailMessage" => "id not set "
         )));
     }
 }
@@ -98,19 +98,19 @@ function create(){
         if ($created) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Merchant Email Added successfully"
+                "emailMessage" => "Merchant Email Added successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }
     else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "email required "
+            "emailMessage" => "email required "
         )));
     }
 }
@@ -129,19 +129,19 @@ function update(){
         if ($updated){
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Merchant Email updated successfully"
+                "emailMessage" => "Merchant Email updated successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }
     else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "email required "
+            "emailMessage" => "email required "
         )));
     }
 }
@@ -156,19 +156,19 @@ function delete(){
         if ($deleted){
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Merchant Email deleted successfully"
+                "emailMessage" => "Merchant Email deleted successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }
     else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "id not set "
+            "emailMessage" => "id not set "
         )));
     }
 }

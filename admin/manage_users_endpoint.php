@@ -44,12 +44,12 @@ $option = $_POST['option'];
                 if ($updated) {
                     print_r(json_encode(array(
                         "statusCode" => 200,
-                        "message" => "Limits updated successfully"
+                        "emailMessage" => "Limits updated successfully"
                     )));
                 } else {
                     print_r(json_encode(array(
                         "statusCode" => 500,
-                        "message" => "Error occurred"
+                        "emailMessage" => "Error occurred"
                     )));
                 }
 
@@ -73,12 +73,12 @@ $option = $_POST['option'];
                 }
                 print_r(json_encode(array(
                     "statusCode" => 200,
-                    "message" => $message
+                    "emailMessage" => $message
                 )));
             } else {
                 print_r(json_encode(array(
                     "statusCode" => 500,
-                    "message" => "Error occurred"
+                    "emailMessage" => "Error occurred"
                 )));
             }
         }
@@ -94,12 +94,12 @@ function approveAccount(){
 
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Account Approved Successfully"
+                "emailMessage" => "Account Approved Successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }
@@ -120,12 +120,12 @@ function promoteDemote(){
             }
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => $message
+                "emailMessage" => $message
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     }

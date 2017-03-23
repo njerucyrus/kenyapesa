@@ -21,19 +21,19 @@ if(isset($_POST['user_id']) and isset($_POST['review'])) {
     if ($created) {
         print_r(json_encode(array(
             "statusCode" => 200,
-            "message" => "review submitted successfully"
+            "emailMessage" => "review submitted successfully"
         )));
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "Error occurred"
+            "emailMessage" => "Error occurred"
         )));
     }
 }
 else {
     print_r(json_encode(array(
         "statusCode" => 500,
-        "message" => "Missing text"
+        "emailMessage" => "Missing text"
     )));
 }
 

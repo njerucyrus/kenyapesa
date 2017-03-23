@@ -5,6 +5,8 @@
  * Date: 16/03/2017
  * Time: 00:03
  */
+
+include_once('views/send_email.php');
 ?>
 <div class="container">
     <div class="row">
@@ -60,7 +62,7 @@
                                             </div>
                                             <div class="single_info_text">
                                                 <h3>WORK HOUR</h3>
-                                                <p>Mon - Sat: 08 Am - 17 Pm</p>
+                                                <p>Mon - Sun: 08 Am - 10 Pm</p>
                                             </div>
                                         </div>
                                     </div>
@@ -75,18 +77,21 @@
                             <div class="separator"></div>
                         </div>
                         <div class="single_contant_left">
-                            <form action="#" id="formid">
+                            <form method = "post"
+                                  action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  id="formid">
                                 <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
 
                                 <div class="row">
+                                    <p><?php echo $message;?></p>
                                     <div class="col-sm-6">
+
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                                            <input type="text" class="form-control" name="first_name" placeholder="First Name" required="">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Last Name" required="">
+                                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="">
                                         </div>
                                     </div>
                                 </div>

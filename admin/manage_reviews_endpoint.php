@@ -29,18 +29,18 @@ function approveReview()
         if ($approved) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Review approved successfully"
+                "emailMessage" => "Review approved successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "Error! Could not find the review id"
+            "emailMessage" => "Error! Could not find the review id"
         )));
     }
 }
@@ -54,18 +54,18 @@ function deleteReview()
         if ($deleted) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Review approved successfully"
+                "emailMessage" => "Review approved successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "Error! Could not find the review id"
+            "emailMessage" => "Error! Could not find the review id"
         )));
     }
 }

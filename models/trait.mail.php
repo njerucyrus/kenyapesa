@@ -38,7 +38,7 @@ trait CustomMailing
 
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'message' => "Error " . $e->getMessage()
+                'emailMessage' => "Error " . $e->getMessage()
             )));
             return null;
 
@@ -75,19 +75,22 @@ trait CustomMailing
 
     /**
      * @param $to
-     * @param $subject
-     * @param $message
      * @return bool
      * used for sending custom email.
      */
-    public static function sendMail($to, $subject, $message){
+    public  function sendMail($to){
+
+
+        $name = $this->getFirstName() ."  ".$this->getLastName();
+        $sender = $this->getSenderEmail();
+        $subject = $this->getSubject();
+        $message = $this->getEmailMessage();
+
         $headers[] = 'MIME-Version: 1.0';
         $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = "From:$name <$sender>";
+
         $sent = mail($to, $subject, $message, implode("\r\n", $headers));
-        if ($sent) {
-            return true;
-        } else {
-            return false;
-        }
+        return $sent ? true : false;
     }
 }

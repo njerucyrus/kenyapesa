@@ -61,7 +61,7 @@ trait ComplexQuery {
             } catch (PDOException $e){
                 print_r(json_encode(array(
                     'statusCode' => 500,
-                    'message' => "Error " . $e->getMessage()
+                    'emailMessage' => "Error " . $e->getMessage()
                 )));
                 return null;
             }

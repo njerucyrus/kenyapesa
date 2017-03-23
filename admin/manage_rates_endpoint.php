@@ -57,19 +57,19 @@ function createRate()
         if ($created) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Rates saved successfully"
+                "emailMessage" => "Rates saved successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "Error occurred"
+                "emailMessage" => "Error occurred"
             )));
         }
 
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "data not set"
+            "emailMessage" => "data not set"
         )));
     }
 }
@@ -102,12 +102,12 @@ function updateRate()
         if ($updated) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Rates updated successfully"
+                "emailMessage" => "Rates updated successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "error occurred"
+                "emailMessage" => "error occurred"
             )));
         }
 
@@ -115,7 +115,7 @@ function updateRate()
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "data not set"
+            "emailMessage" => "data not set"
         )));
     }
 }
@@ -129,19 +129,19 @@ function deleteRate()
         if ($deleted) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Rate Deleted successfully"
+                "emailMessage" => "Rate Deleted successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "error occurred"
+                "emailMessage" => "error occurred"
             )));
         }
 
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "data not set"
+            "emailMessage" => "data not set"
         )));
     }
 
@@ -169,19 +169,19 @@ function createLimit()
         if ($created) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Limits saved successfully"
+                "emailMessage" => "Limits saved successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "error occurred"
+                "emailMessage" => "error occurred"
             )));
         }
 
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "data not set"
+            "emailMessage" => "data not set"
         )));
     }
 }
@@ -210,19 +210,19 @@ function updateLimit()
         if ($updated) {
             print_r(json_encode(array(
                 "statusCode" => 200,
-                "message" => "Limits Updated successfully"
+                "emailMessage" => "Limits Updated successfully"
             )));
         } else {
             print_r(json_encode(array(
                 "statusCode" => 500,
-                "message" => "error occurred"
+                "emailMessage" => "error occurred"
             )));
         }
 
     } else {
         print_r(json_encode(array(
             "statusCode" => 500,
-            "message" => "data not set"
+            "emailMessage" => "data not set"
         )));
     }
 }
