@@ -283,12 +283,7 @@ class User extends Auth implements PesaCrud
             $stmt = $conn->prepare("SELECT * FROM users WHERE paypal_email= '{$paypal_email}'");
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
-
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e) {
             print_r(json_encode(array(
@@ -308,11 +303,7 @@ class User extends Auth implements PesaCrud
 
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e) {
 
@@ -328,11 +319,7 @@ class User extends Auth implements PesaCrud
 
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
 
         } catch (PDOException $e) {

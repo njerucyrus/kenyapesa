@@ -239,11 +239,7 @@ class Payment implements PesaCrud
 
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e) {
             print_r(json_encode(array(
@@ -266,11 +262,8 @@ class Payment implements PesaCrud
             $stmt = $conn->prepare("SELECT * FROM payments WHERE `status`='Completed'");
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
+            return $stmt->rowCount() > 0 ? $stmt : null;
+
         } catch (PDOException $e) {
 
             print_r(json_encode(array(
@@ -314,7 +307,7 @@ class Payment implements PesaCrud
 
                 $errors = array();
                 if ((float)$amount > $amountLimit) {
-                    $message = "The amount provided exceeds the Your Allowed Limit of ( <span style='color:#ff7200;'>" .$amountLimit." USD</span> )";
+                    $message = "The amount provided exceeds the Your Allowed Limit of ( <span style='color:#ff7200;'>" . $amountLimit . " USD</span> )";
 
                     array_push($errors, array(
                         "amt_limit_error" => $message

@@ -169,6 +169,10 @@ class Rate implements PesaCrud
         }
     }
 
+    /**
+     * @param $id
+     * @return null|PDOStatement
+     */
     public static function getById($id)
     {
         global $conn;
@@ -178,11 +182,7 @@ class Rate implements PesaCrud
             $stmt->bindParam(":id", $id);
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e) {
             print_r(json_encode(array(
@@ -198,15 +198,11 @@ class Rate implements PesaCrud
     {
         global $conn;
         try {
+
             $stmt = $conn->prepare("SELECT * FROM rates WHERE 1");
             $stmt->execute();
 
-            if ($stmt->rowCount() > 0) {
-                return $stmt;
-            } else {
-                return null;
-            }
-
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e) {
 
@@ -235,7 +231,6 @@ class Rate implements PesaCrud
 
             if ($stmt->rowCount() == 1) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
                 return array(
                     "fixed" => $row['fixed_dollar'],
                     "percentage" => $row['percentage']

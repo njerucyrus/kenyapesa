@@ -62,11 +62,7 @@ trait CustomMailing
 
             $to = rtrim(implode(',', $recipients), ',');
             $sent = mail($to, $subject, $message, implode("\r\n", $headers));
-            if ($sent) {
-                return true;
-            } else {
-                return false;
-            }
+            return $sent ? true : false;
         } else {
             return false;
         }
@@ -81,13 +77,11 @@ trait CustomMailing
      * used for sending custom email.
      */
     public static function sendMail($to, $subject, $message){
+
         $headers[] = 'MIME-Version: 1.0';
         $headers[] = 'Content-type: text/html; charset=iso-8859-1';
         $sent = mail($to, $subject, $message, implode("\r\n", $headers));
-        if ($sent) {
-            return true;
-        } else {
-            return false;
-        }
+
+        return $sent ? true : false;
     }
 }

@@ -142,12 +142,7 @@ class Merchant implements PesaCrud{
 
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            if($stmt->rowCount() > 0){
-                return $stmt;
-            }
-            else{
-                return null;
-            }
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e){
             print_r(json_encode(array(
@@ -170,12 +165,8 @@ class Merchant implements PesaCrud{
             $stmt = $conn->prepare("SELECT * FROM merchants WHERE 1");
 
             $stmt->execute();
-            if($stmt->rowCount() > 0){
-                return $stmt;
-            }
-            else{
-                return null;
-            }
+
+            return $stmt->rowCount() > 0 ? $stmt : null;
 
         } catch (PDOException $e){
             print_r(json_encode(array(
