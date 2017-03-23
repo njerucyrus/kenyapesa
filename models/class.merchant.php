@@ -12,6 +12,7 @@ require_once __DIR__ .'/../db/class.db.php';
 class Merchant implements PesaCrud{
 
     use ComplexQuery;
+
     private $merchantEmail;
     private $status;
 
@@ -241,4 +242,3 @@ class Merchant implements PesaCrud{
     }
 
 }
-

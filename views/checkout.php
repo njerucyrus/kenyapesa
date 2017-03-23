@@ -7,6 +7,8 @@ session_start();
  * Time: 1:03 AM
  */
 require_once __DIR__.'/../models/class.payment.php';
+require_once __DIR__.'/../models/class.merchant.php';
+
 if(isset($_SESSION['username'])) {
     $userPaypalEmail = $_SESSION['username'];
 
@@ -16,6 +18,8 @@ if(isset($_SESSION['username'])) {
         $limit_errors = Payment::authenticate_payment($userPaypalEmail,$amount);
 
         if (count($limit_errors) == 0) {
+
+            $merchant = Merchant::customFilter('merchants', ["email"], array("status"=>1));
 
             $marchant_email = 'njerucyrusdev@gmail.com';
             //$marchant_email = 'quickserve@hudutech.com';
