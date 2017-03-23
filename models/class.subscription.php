@@ -5,11 +5,12 @@
  * Date: 17/03/2017
  * Time: 23:38
  */
-require_once __DIR__.'/../db/class.db.php';
+require_once __DIR__ . '/../db/class.db.php';
 require_once 'interface.crud.php';
-require_once  'trait.mail.php';
+require_once 'trait.mail.php';
 
-class Subscription implements PesaCrud {
+class Subscription implements PesaCrud
+{
 
     use CustomMailing;
 
@@ -51,37 +52,32 @@ class Subscription implements PesaCrud {
     //setting getter and setters
     public function create()
     {
-        // TODO: Implement create() method.
-
         global $conn;
-       try{
+        try {
 
-           $name = $this->getName();
-           $email = $this->getEmail();
+            $name = $this->getName();
+            $email = $this->getEmail();
 
-           $stmt = $conn->prepare("INSERT INTO subscription(name, email) VALUES(:name,:email)");
-           $stmt->bindParam(":name", $name);
-           $stmt->bindParam(":email", $email);
-           $stmt->execute();
-           return true;
+            $stmt = $conn->prepare("INSERT INTO subscription(name, email) VALUES(:name,:email)");
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":email", $email);
+            $stmt->execute();
+            return true;
 
-       }catch (PDOException $e) {
-           print_r(json_encode(array(
-               'statusCode' => 500,
-               'emailMessage' => "Error " . $e->getMessage()
-           )));
+        } catch (PDOException $e) {
+            print_r(json_encode(array(
+                'statusCode' => 500,
+                'message' => "Error " . $e->getMessage()
+            )));
 
-           return false;
-       }
+            return false;
+        }
     }
 
     public function update($id)
     {
-        // TODO: Implement update() method.
-
-
         global $conn;
-        try{
+        try {
 
             $name = $this->getName();
             $email = $this->getEmail();
@@ -93,20 +89,20 @@ class Subscription implements PesaCrud {
             $stmt->execute();
             return true;
 
-        }catch (PDOException $e) {
+        } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'emailMessage' => "Error " . $e->getMessage()
+                'message' => "Error " . $e->getMessage()
             )));
             return false;
 
-    }}
+        }
+    }
 
     public static function delete($id)
     {
-        // TODO: Implement delete() method.
         global $conn;
-        try{
+        try {
             $stmt = $conn->prepare("DELETE FROM limits WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
@@ -115,7 +111,7 @@ class Subscription implements PesaCrud {
         } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'emailMessage' => "Error " . $e->getMessage()
+                'message' => "Error " . $e->getMessage()
             )));
 
             return false;
@@ -124,24 +120,19 @@ class Subscription implements PesaCrud {
 
     public static function getById($id)
     {
-        // TODO: Implement getById() method.
         global $conn;
-        try{
+        try {
 
             $stmt = $conn->prepare("SELECT * FROM subscription WHERE id=:id");
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            if($stmt->rowCount()> 0) {
-                return $stmt;
-            }
-            else{
-                return null;
-            }
 
-        } catch (PDOException $e){
+            return $stmt->rowCount() > 0 ? $stmt : null;
+
+        } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'emailMessage' => "Error " . $e->getMessage()
+                'message' => "Error " . $e->getMessage()
             )));
 
             return null;
@@ -150,23 +141,18 @@ class Subscription implements PesaCrud {
 
     public static function all()
     {
-        // TODO: Implement all() method.
         global $conn;
-        try{
+        try {
 
             $stmt = $conn->prepare("SELECT * FROM subscription WHERE 1");
             $stmt->execute();
-            if($stmt->rowCount() > 0 ) {
-                return $stmt;
-            }
-            else {
-                return null;
-            }
 
-        } catch (PDOException $e){
+            return $stmt->rowCount() > 0 ? $stmt : null;
+
+        } catch (PDOException $e) {
             print_r(json_encode(array(
                 'statusCode' => 500,
-                'emailMessage' => "Error " . $e->getMessage()
+                'message' => "Error " . $e->getMessage()
             )));
 
             return null;

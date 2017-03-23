@@ -7,6 +7,9 @@ session_start();
  * Time: 1:03 AM
  */
 require_once __DIR__.'/../models/class.payment.php';
+require_once __DIR__.'/../models/class.merchant.php';
+
+
 if(isset($_SESSION['username'])) {
     $userPaypalEmail = $_SESSION['username'];
 
@@ -17,8 +20,17 @@ if(isset($_SESSION['username'])) {
 
         if (count($limit_errors) == 0) {
 
-            $marchant_email = 'njerucyrusdev@gmail.com';
-            //$marchant_email = 'quickserve@hudutech.com';
+            $table = 'merchants';
+            $fields = array("merchant_email");
+            $options = array(
+                    "status" => 1,
+                    "limit"=>1
+            );
+
+            $merchantObject = Merchant::customFilter($table, $fields, $options);
+
+            $merchant_email = !is_null($merchant = $merchantObject->fetch(PDO::FETCH_ASSOC)) ? $merchant['merchant_email'] : 'quickserve@hudutech.com';
+
             $paypalURL = "https://www.sandbox.paypal.com/cgi-bin/webscr";
 
             $notify_url = "https://c58673fb.ngrok.io/kenyapesa/views/ipn.php";
